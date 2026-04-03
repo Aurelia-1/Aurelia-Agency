@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurelia Agency — Premium Digital Agency</title>
+  <link rel="icon" type="image/png" href="./images/logo.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span>✦ Premium Digital Agency — Pakistan's Finest</span>
+    <div class="top-bar-right">
+      <a href="tel:+923253548990">
+        <i data-lucide="phone" class="top-bar-icon"></i>
+        +92 325 3548990
+      </a>
+      <a href="https://www.instagram.com/_aureliaa_._">
+        <i data-lucide="instagram" class="top-bar-icon"></i>
+        Instagram
+      </a>
+      <a href="#">
+        <i data-lucide="linkedin" class="top-bar-icon"></i>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="logo">
+      <div class="logo-bar"></div>
+      <div class="logo-text">
+        <span class="brand">AURELIA</span>
+        <span class="sub">Agency</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Our Projects</a></li>
+      <li><a href="#owners">Owners</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li>
+        <a href="#contact" class="btn-contact">
+          <span>Contact Us</span>
+          <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-text">AURELIA</div>
+    <div class="hero-left">
+      <div class="hero-tag">Premium Digital Agency</div>
+      <h1 class="hero-h1">
+        We Build<br><em>Brands</em><br>That Last
+      </h1>
+      <p class="hero-desc">
+        Aurelia Agency crafts extraordinary digital experiences — from social media dominance to stunning websites. We
+        transform ambitious brands into iconic presences.
+      </p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn-primary"><span>Explore Services</span></a>
+        <a href="projects.html" class="btn-outline">View Our Work →</a>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        Scroll Down
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="orbit-scene">
+          <!-- 4 Orbit Rings -->
+          <div class="orbit-ring orbit-ring-1">
+            <div class="orbit-dot orbit-dot-1"></div>
+          </div>
+          <div class="orbit-ring orbit-ring-2">
+            <div class="orbit-dot orbit-dot-2"></div>
+          </div>
+          <div class="orbit-ring orbit-ring-3">
+            <div class="orbit-dot orbit-dot-3"></div>
+          </div>
+          <div class="orbit-ring orbit-ring-4">
+            <div class="orbit-dot orbit-dot-4"></div>
+          </div>
+
+          <!-- Enhanced Globe -->
+          <div class="globe-wrap">
+            <svg class="globe-svg" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="globeGrad" cx="38%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="rgba(195,1,1,0.3)" />
+                  <stop offset="60%" stop-color="rgba(195,1,1,0.15)" />
+                  <stop offset="100%" stop-color="rgba(195,1,1,0.05)" />
+                </radialGradient>
+                <radialGradient id="shineGrad" cx="35%" cy="30%" r="45%">
+                  <stop offset="0%" stop-color="rgba(255,50,50,0.2)" />
+                  <stop offset="100%" stop-color="rgba(195,1,1,0.05)" />
+                </radialGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+                <clipPath id="globeClip">
+                  <circle cx="170" cy="170" r="155" />
+                </clipPath>
+              </defs>
+
+              <!-- Outer rim -->
+              <circle cx="170" cy="170" r="158" fill="none" stroke="rgba(195,1,1,0.2)" stroke-width="1.5" />
+              <!-- Base sphere -->
+              <circle cx="170" cy="170" r="155" fill="url(#globeGrad)" stroke="rgba(195,1,1,0.4)" stroke-width="1" />
+
+              <!-- Latitude lines -->
+              <g clip-path="url(#globeClip)" stroke="rgba(195,1,1,0.25)" stroke-width="0.8" fill="none">
+                <ellipse cx="170" cy="170" rx="155" ry="30" />
+                <ellipse cx="170" cy="170" rx="155" ry="68" />
+                <ellipse cx="170" cy="170" rx="155" ry="110" />
+                <ellipse cx="170" cy="170" rx="155" ry="145" />
+                <line x1="15" y1="170" x2="325" y2="170" />
+              </g>
+
+              <!-- Longitude lines -->
+              <g clip-path="url(#globeClip)" stroke="rgba(195,1,1,0.25)" stroke-width="0.8" fill="none">
+                <ellipse cx="170" cy="170" rx="30" ry="155" />
+                <ellipse cx="170" cy="170" rx="68" ry="155" />
+                <ellipse cx="170" cy="170" rx="110" ry="155" />
+                <line x1="170" y1="15" x2="170" y2="325" />
+              </g>
+
+              <!-- Continents -->
+              <g clip-path="url(#globeClip)" fill="rgba(195,1,1,0.6)" stroke="rgba(195,1,1,0.8)" stroke-width="0.8">
+                <!-- North America -->
+                <path d="M88,86 Q76,100 78,120 Q82,140 100,146 Q116,154 124,140 Q134,124 130,106 Q124,88 110,80 Z" />
+                <!-- South America -->
+                <path
+                  d="M114,172 Q103,188 106,214 Q109,236 121,240 Q133,242 138,224 Q143,204 138,182 Q133,162 120,166 Z" />
+                <!-- Europe -->
+                <path d="M184,84 Q175,90 176,107 Q177,121 186,124 Q195,127 200,115 Q206,103 200,91 Q195,81 185,82 Z" />
+                <!-- Africa -->
+                <path
+                  d="M180,136 Q170,148 172,174 Q174,196 184,206 Q194,216 202,206 Q210,194 208,168 Q206,142 196,133 Z" />
+                <!-- Asia -->
+                <path d="M220,80 Q204,84 202,102 Q200,118 212,128 Q228,136 244,126 Q258,114 255,95 Q251,76 235,77 Z" />
+                <!-- Australia -->
+                <path
+                  d="M240,200 Q226,206 226,221 Q226,234 239,238 Q251,240 256,228 Q260,218 253,206 Q247,196 240,198 Z" />
+              </g>
+
+              <!-- Shine overlay -->
+              <circle cx="170" cy="170" r="155" fill="url(#shineGrad)" />
+
+              <!-- Pole dots -->
+              <circle cx="170" cy="15" r="3" fill="rgba(195,1,1,0.9)" filter="url(#glow)" />
+              <circle cx="170" cy="325" r="3" fill="rgba(195,1,1,0.6)" />
+            </svg>
+            <div class="orb-label">
+              <i data-lucide="globe"></i>
+              Global Reach
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-number">
+          <div class="hero-number-value">
+
+            <span class="hero-number-plus">+</span>
+          </div>
+          <span>Projects Delivered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-item reveal">
+      <div class="stat-num"><span class="counter" data-target="50">0</span><span class="stat-suffix">+</span></div>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+      <div class="stat-num"><span class="counter" data-target="100">0</span><span class="stat-suffix">+</span></div>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-num"><span class="counter" data-target="3">0</span><span class="stat-suffix">+</span></div>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-num"><span class="counter" data-target="98">0</span><span class="stat-suffix">%</span></div>
+      <span class="stat-label">Client Satisfaction</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-tag reveal">What We Do</div>
+    <h2 class="section-h2 reveal reveal-delay-1">Services That <em>Define</em><br>Your Brand</h2>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-num">01</span>
+        <div class="service-icon"><i data-lucide="megaphone"></i></div>
+        <h3 class="service-title">Social Media Marketing</h3>
+        <p class="service-desc">Strategic social campaigns that build audiences, spark conversations, and convert
+          followers into loyal customers across every platform.</p>
+        <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">02</span>
+        <div class="service-icon"><i data-lucide="pen-tool"></i></div>
+        <h3 class="service-title">Content Creation</h3>
+        <p class="service-desc">Compelling content that tells your brand story — from graphics and copy to full creative
+          campaigns that captivate your audience.</p>
+        <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">03</span>
+        <div class="service-icon"><i data-lucide="video"></i></div>
+        <h3 class="service-title">Video Editing</h3>
+        <p class="service-desc">Cinematic video production and editing that brings your brand to life — reels, ads,
+          brand films, and everything in between.</p>
+        <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">04</span>
+        <div class="service-icon"><i data-lucide="code"></i></div>
+        <h3 class="service-title">Web Development</h3>
+        <p class="service-desc">High-performance, visually stunning websites built with modern technologies. From
+          landing pages to complex web applications.</p>
+        <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">05</span>
+        <div class="service-icon"><i data-lucide="shopping-bag"></i></div>
+        <h3 class="service-title">Shopify Store Development</h3>
+        <p class="service-desc">Custom Shopify stores engineered for maximum conversion — beautiful design, smooth UX,
+          and powerful integrations that drive sales.</p>
+        <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2"
+        style="background: rgba(200,16,46,0.04); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center;">
+        <div
+          style="font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:300; color:var(--red); margin-bottom:12px;">
+          ✦</div>
+        <h3 class="service-title" style="font-size:22px;">Ready to Grow?</h3>
+        <p class="service-desc">Let's craft something extraordinary together.</p>
+        <a href="https://wa.me/923253548900" class="btn-primary" style="margin-top:8px;"><span>Book a Call</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="projects-header">
+      <div>
+        <div class="section-tag reveal">Our Work</div>
+        <h2 class="section-h2 reveal reveal-delay-1">Projects That <em>Speak</em><br>for Themselves</h2>
+      </div>
+      <a href="projects.html" class="btn-outline reveal">See All Projects →</a>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-cover">
+          <img src="./images/project1.png" alt="Detailing Bros Paint Protection">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Automotive Web Design</div>
+          <h3 class="project-name">Detailing Bros Paint Protection</h3>
+          <p class="project-desc">Complete website design for an automotive detailing and paint protection specialist,
+            featuring a sleek, dark aesthetic.</p>
+          <div class="project-footer">
+            <div class="project-num">01</div>
+            <div class="project-arrow"><i data-lucide="arrow-up-right"
+                style="width:16px;height:16px;stroke:inherit;"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-cover">
+          <img src="./images/project2.png" alt="Thrift Bazar E-Commerce">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">E-Commerce / Thrift Store</div>
+          <h3 class="project-name">Thrift Bazar E-Commerce</h3>
+          <p class="project-desc">A modern, curated thrift store platform focused on bold aesthetics and high-conversion
+            shopping experiences.</p>
+          <div class="project-footer">
+            <div class="project-num">02</div>
+            <div class="project-arrow"><i data-lucide="arrow-up-right"
+                style="width:16px;height:16px;stroke:inherit;"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-cover">
+          <img src="./images/project3.png" alt="Crypto Groups Hub Directory">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Crypto / Directory</div>
+          <h3 class="project-name">Crypto Groups Hub Directory</h3>
+          <p class="project-desc">A comprehensive directory platform for free cryptocurrency Telegram groups, featuring
+            live signal tracking and categorised listings.</p>
+          <div class="project-footer">
+            <div class="project-num">03</div>
+            <div class="project-arrow"><i data-lucide="arrow-up-right"
+                style="width:16px;height:16px;stroke:inherit;"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-cover">
+          <img src="./images/project4.png" alt="One Call Solution App">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Service Aggregator</div>
+          <h3 class="project-name">One Call Solution App</h3>
+          <p class="project-desc">Landing page for an on-demand multi-service platform connecting users with
+            electricians, plumbers, and local professionals.</p>
+          <div class="project-footer">
+            <div class="project-num">04</div>
+            <div class="project-arrow"><i data-lucide="arrow-up-right"
+                style="width:16px;height:16px;stroke:inherit;"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OWNERS -->
+  <section class="owners" id="owners">
+    <div class="section-tag reveal" style="justify-content:center;">The Minds Behind Aurelia</div>
+    <h2 class="section-h2 reveal reveal-delay-1" style="text-align:center;">Meet the <em>Founders</em></h2>
+    <div class="owners-grid">
+      <div class="owner-card reveal">
+        <div class="owner-line"></div>
+        <div class="owner-avatar-img">
+          <img src="./images/mudassir pfp.jpeg" alt="Mudassir Shaikh">
+        </div>
+        <div class="owner-name">Mudassir Shaikh</div>
+        <div class="owner-role">Co-Founder & Creative Director</div>
+        <p class="owner-bio">With a decade of experience in brand strategy and creative direction, Mudassir leads
+          Aurelia's visual identity work and ensures every project exceeds expectations. His philosophy: beautiful
+          design is never an accident.</p>
+        <a href="#" class="owner-visit-btn">Visit Site →</a>
+      </div>
+      <div class="owner-card reveal reveal-delay-1">
+        <div class="owner-line"></div>
+        <div class="owner-avatar-img">
+          <img src="./images/ahmed pfp.jpeg" alt="Ahmed Qureshi">
+        </div>
+        <div class="owner-name">Ahmed Qureshi</div>
+        <div class="owner-role">Co-Founder & Digital Strategist</div>
+        <p class="owner-bio">Ahmed drives Aurelia's growth marketing and digital strategy practice. With expertise in
+          social media and paid media, he has helped over 50 brands scale their digital presence across Pakistan and the
+          UK.</p>
+        <a href="https://ahmed-qureshi-three.vercel.app/" class="owner-visit-btn">Visit Site →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div>
+        <div class="section-tag reveal">Our Story</div>
+        <h2 class="section-h2 reveal reveal-delay-1">Born to Build <em>Legendary</em> Brands</h2>
+        <p class="reveal reveal-delay-2">Aurelia Agency was founded with one vision: to give ambitious businesses access
+          to world-class digital expertise. We believe every brand deserves extraordinary work — not just good enough.
+        </p>
+        <p class="reveal reveal-delay-3">From startups in Karachi to established businesses in the UK, we've helped
+          brands break through the noise and claim their space in the digital world.</p>
+        <div class="about-values">
+          <div class="about-value reveal">
+            <h4>Excellence</h4>
+            <p>We never settle for ordinary. Every pixel, word, and strategy is crafted to perfection.</p>
+          </div>
+          <div class="about-value reveal reveal-delay-1">
+            <h4>Innovation</h4>
+            <p>We stay ahead of trends so your brand always leads, never follows.</p>
+          </div>
+          <div class="about-value reveal reveal-delay-2">
+            <h4>Results</h4>
+            <p>Beautiful work that actually performs. We measure success by your growth.</p>
+          </div>
+          <div class="about-value reveal reveal-delay-3">
+            <h4>Partnership</h4>
+            <p>We're not a vendor — we're your long-term digital growth partner.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal reveal-delay-2">
+        <div class="about-box"></div>
+        <div class="about-box"></div>
+        <div class="about-box-center">A</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="section-tag reveal">Testimonials</div>
+    <h2 class="section-h2 reveal reveal-delay-1">What Our <em>Clients</em> Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+            data-lucide="star"></i>
+        </div>
+        <p class="review-text">Aurelia completely transformed our digital presence. Our Shopify sales tripled in the
+          first two months. Extraordinary work, extraordinary team.</p>
+        <div class="review-author">
+          <div class="review-avatar">Z</div>
+          <div>
+            <div class="review-name">Zara Malik</div>
+            <div class="review-location">Fashion Brand Owner, Lahore</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+            data-lucide="star"></i>
+        </div>
+        <p class="review-text">The website they built for us is absolutely stunning. We've received so many compliments
+          from clients. Best investment we made for our business.</p>
+        <div class="review-author">
+          <div class="review-avatar">H</div>
+          <div>
+            <div class="review-name">Hassan Ahmed</div>
+            <div class="review-location">CEO, Tech Startup, Karachi</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+            data-lucide="star"></i>
+        </div>
+        <p class="review-text">Their social media strategy is next level. Our Instagram engagement went from nearly
+          nothing to thousands of real, engaged followers in three months.</p>
+        <div class="review-author">
+          <div class="review-avatar">F</div>
+          <div>
+            <div class="review-name">Fatima Siddiqui</div>
+            <div class="review-location">Restaurant Owner, Islamabad</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+            data-lucide="star"></i>
+        </div>
+        <p class="review-text">Professional, creative, and results-driven. The video content Aurelia produced for our
+          brand was cinematic quality. Highly recommended.</p>
+        <div class="review-author">
+          <div class="review-avatar">K</div>
+          <div>
+            <div class="review-name">Kamran Baig</div>
+            <div class="review-location">Brand Director, Dubai</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+            data-lucide="star"></i>
+        </div>
+        <p class="review-text">Working with Aurelia felt like having an in-house team of experts. They understood our
+          brand instantly and delivered beyond what we asked for.</p>
+        <div class="review-author">
+          <div class="review-avatar">N</div>
+          <div>
+            <div class="review-name">Nadia Hussain</div>
+            <div class="review-location">Boutique Owner, UK</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-quote">"</div>
+        <div class="review-stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+            data-lucide="star"></i>
+        </div>
+        <p class="review-text">Aurelia's content creation service is simply exceptional. They captured our brand voice
+          perfectly and our audience grew faster than we imagined.</p>
+        <div class="review-author">
+          <div class="review-avatar">O</div>
+          <div>
+            <div class="review-name">Omar Sheikh</div>
+            <div class="review-location">eCommerce Founder, Karachi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div>
+        <div class="section-tag reveal">Let's Connect</div>
+        <h2 class="section-h2 reveal reveal-delay-1">Start Your <em>Journey</em><br>With Us</h2>
+        <form class="contact-form reveal reveal-delay-2" id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="John"
+                required></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith"
+                required></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" name="email"
+              placeholder="john@company.com" required></div>
+          <div class="form-group">
+            <label>Service Interested In</label>
+            <select name="service" required>
+              <option>Social Media Marketing</option>
+              <option>Content Creation</option>
+              <option>Video Editing</option>
+              <option>Web Development</option>
+              <option>Shopify Store Development</option>
+              <option>Full Package</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Your Message</label><textarea name="message"
+              placeholder="Tell us about your project..." required></textarea></div>
+          <button type="submit" class="btn-submit"><span>Send Message →</span></button>
+        </form>
+      </div>
+      <div class="contact-info reveal reveal-delay-1">
+        <h3>We'd Love to Hear<br>From You</h3>
+        <p>Ready to elevate your brand? Reach out and let's discuss how Aurelia can help you achieve extraordinary
+          results.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="phone"></i></div>
+            <div class="contact-detail-text"><label>Phone</label><span>+92 3253548990</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="mail"></i></div>
+            <div class="contact-detail-text"><label>Email</label><span>aureliaagency@gmail.com</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="map-pin"></i></div>
+            <div class="contact-detail-text"><label>Location</label><span>Karachi, Pakistan</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i data-lucide="clock"></i></div>
+            <div class="contact-detail-text"><label>Response Time</label><span>Within 2 Hours</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo logo">
+      <div class="logo-bar"></div>
+      <div class="logo-text">
+        <span class="brand">AURELIA</span>
+        <span class="sub">Agency</span>
+      </div>
+    </div>
+    <span class="footer-copy">© 2026 Aurelia Agency. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "5G0fZV4btyBiuyidt",
+      });
+    })();
+  </script>
+
+
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
