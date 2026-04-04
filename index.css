@@ -1184,4 +1184,19 @@ footer {
 
 .project-card:hover {
   transform: translateY(-8px);
+}.top-bar-stats span {
+  color: #c9a96e;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }

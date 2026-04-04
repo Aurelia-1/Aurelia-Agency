@@ -108,3 +108,26 @@
       });
     }
   
+
+
+let visitorEl = document.getElementById("visitors");
+
+function getRandomVisitors() {
+  return Math.floor(Math.random() * 500) + 50; 
+  // range: 50 se 550 tak (adjust kar sakta hai)
+}
+
+function updateVisitors() {
+  visitorEl.classList.add("fade-out");
+
+  setTimeout(() => {
+    let newValue = getRandomVisitors();
+    visitorEl.textContent = newValue + " Visitors";
+
+    visitorEl.classList.remove("fade-out");
+    visitorEl.classList.add("fade-in");
+  }, 400);
+}
+
+// har 2.5 sec change
+setInterval(updateVisitors, 2500);
