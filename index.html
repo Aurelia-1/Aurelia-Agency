@@ -677,12 +677,14 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeMobileNav();
     });
-
-    // Re-init lucide icons after drawer is in DOM
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-  </script>
+</script>
 
   <script type="module" src="index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    });
+  </script>
 </body>
 
 </html>
