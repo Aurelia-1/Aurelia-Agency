@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Primary Meta Tags -->
   <title>Our Projects — Aurelia Agency | Premium Web Design Portfolio</title>
   <meta name="title" content="Our Projects — Aurelia Agency | Premium Web Design Portfolio">
   <meta name="description" content="Explore Aurelia Agency's portfolio of 100+ successful projects including Shopify stores, SaaS platforms, corporate websites, and e-commerce solutions. View our work.">
@@ -13,10 +12,8 @@
   <meta name="language" content="English">
   <meta name="author" content="Aurelia Agency">
   
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://www.aureliaagency.com/projects.html">
   
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.aureliaagency.com/projects.html">
   <meta property="og:title" content="Our Projects — Aurelia Agency | Premium Web Design Portfolio">
@@ -24,25 +21,19 @@
   <meta property="og:image" content="https://www.aureliaagency.com/images/projects-og.jpg">
   <meta property="og:site_name" content="Aurelia Agency">
   
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://www.aureliaagency.com/projects.html">
   <meta name="twitter:title" content="Our Projects — Aurelia Agency | Premium Web Design Portfolio">
   <meta name="twitter:description" content="Explore Aurelia Agency's portfolio of 100+ successful projects including Shopify stores, SaaS platforms, corporate websites, and e-commerce solutions.">
   <meta name="twitter:image" content="https://www.aureliaagency.com/images/projects-twitter.jpg">
   
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="projects.css">
   
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,10 +44,7 @@
     "publisher": {
       "@type": "Organization",
       "name": "Aurelia Agency",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.aureliaagency.com/images/logo.png"
-      }
+      "logo": { "@type": "ImageObject", "url": "https://www.aureliaagency.com/images/logo.png" }
     }
   }
   </script>
@@ -66,6 +54,7 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
 
+  <!-- TOP BAR -->
   <div class="top-bar">
     <span>✦ Premium Digital Agency — Pakistan's Finest</span>
     <div class="top-bar-right">
@@ -84,11 +73,14 @@
     </div>
   </div>
 
+  <!-- NAV -->
   <nav id="navbar">
     <div class="logo">
       <div class="logo-bar"></div>
       <div class="logo-text"><span class="brand">AURELIA</span><span class="sub">Agency</span></div>
     </div>
+
+    <!-- Desktop nav -->
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#services">Services</a></li>
@@ -96,11 +88,56 @@
       <li><a href="index.html#owners">Owners</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#reviews">Reviews</a></li>
-      <li><a href="index.html#contact" class="btn-contact"><span>Contact Us</span><i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a></li>
+      <li>
+        <a href="index.html#contact" class="btn-contact">
+          <span>Contact Us</span>
+          <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+        </a>
+      </li>
     </ul>
+
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
-  <!-- HERO -->
+  <!-- MOBILE NAV DRAWER -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-drawer">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="projects.html" class="nav-active">Our Projects</a></li>
+        <li><a href="index.html#owners">Owners</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+      </ul>
+      <div class="mobile-nav-cta">
+        <a href="index.html#contact" class="btn-contact">
+          <span>Contact Us</span>
+          <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+        </a>
+      </div>
+      <div class="mobile-nav-socials">
+        <a href="https://www.instagram.com/_aureliaa_._" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/aurelia-agency-a1263a400" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="linkedin"></i>
+        </a>
+        <a href="tel:+923193921895">
+          <i data-lucide="phone"></i>
+        </a>
+      </div>
+      <p class="mobile-nav-footer">© 2026 Aurelia Agency</p>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="hero-bg-text">WORK</div>
     <div class="hero-tag reveal">Our Portfolio</div>
@@ -132,7 +169,10 @@
       <!-- 1 WIDE - Detailing Bros -->
       <a href="https://detailing-bros.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card wide reveal" data-category="web">
         <div class="project-media">
-          <div class="browser-bar"><div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><div class="browser-url">detailingbros.com</div></div>
+          <div class="browser-bar">
+            <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="browser-url">detailingbros.com</div>
+          </div>
           <div class="project-img-wrap">
             <img src="./images/project1.png" alt="Detailing Bros - Automotive Paint Protection Website">
             <div class="img-overlay"><span>View Project <i data-lucide="arrow-up-right"></i></span></div>
@@ -152,7 +192,10 @@
       <!-- 2 - Thrift Bazar -->
       <a href="https://thrift-bazar-umer.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card reveal" data-category="ecommerce">
         <div class="project-media">
-          <div class="browser-bar"><div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><div class="browser-url">thriftbazar.com</div></div>
+          <div class="browser-bar">
+            <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="browser-url">thriftbazar.com</div>
+          </div>
           <div class="project-img-wrap">
             <img src="./images/project2.png" alt="Thrift Bazar - E-Commerce Thrift Store Platform">
             <div class="img-overlay"><span>View Project <i data-lucide="arrow-up-right"></i></span></div>
@@ -172,7 +215,10 @@
       <!-- 3 - Crypto Groups Hub -->
       <a href="https://cryptotelegramgroups.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card reveal reveal-delay-1" data-category="web">
         <div class="project-media">
-          <div class="browser-bar"><div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><div class="browser-url">cryptogroupshub.com</div></div>
+          <div class="browser-bar">
+            <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="browser-url">cryptogroupshub.com</div>
+          </div>
           <div class="project-img-wrap">
             <img src="./images/project3.png" alt="Crypto Groups Hub - Telegram Directory Platform">
             <div class="img-overlay"><span>View Project <i data-lucide="arrow-up-right"></i></span></div>
@@ -192,7 +238,10 @@
       <!-- 4 - One Call Solution -->
       <a href="https://onecallsolution-t.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card reveal" data-category="web">
         <div class="project-media">
-          <div class="browser-bar"><div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><div class="browser-url">onecallsolution.com</div></div>
+          <div class="browser-bar">
+            <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="browser-url">onecallsolution.com</div>
+          </div>
           <div class="project-img-wrap">
             <img src="./images/project4.png" alt="One Call Solution - Multi-Service Platform">
             <div class="img-overlay"><span>View Project <i data-lucide="arrow-up-right"></i></span></div>
@@ -212,7 +261,10 @@
       <!-- 5 - Advanced Fabrication -->
       <a href="https://meraj-limited.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card reveal reveal-delay-1" data-category="corporate">
         <div class="project-media">
-          <div class="browser-bar"><div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><div class="browser-url">advancedfabrication.com</div></div>
+          <div class="browser-bar">
+            <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="browser-url">advancedfabrication.com</div>
+          </div>
           <div class="project-img-wrap">
             <img src="./images/project5.png" alt="Advanced Fabrication - Industrial Engineering Website">
             <div class="img-overlay"><span>View Project <i data-lucide="arrow-up-right"></i></span></div>
@@ -232,7 +284,10 @@
       <!-- 6 - UsabilityHub -->
       <a href="https://usibility-hub-clone.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card reveal reveal-delay-2" data-category="saas">
         <div class="project-media">
-          <div class="browser-bar"><div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><div class="browser-url">usabilityhub.com</div></div>
+          <div class="browser-bar">
+            <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="browser-url">usabilityhub.com</div>
+          </div>
           <div class="project-img-wrap">
             <img src="./images/project6.png" alt="UsabilityHub - SaaS Platform Landing Page">
             <div class="img-overlay"><span>View Project <i data-lucide="arrow-up-right"></i></span></div>
@@ -284,23 +339,68 @@
   </footer>
 
   <script>
+    // Cursor
     const cursor = document.getElementById('cursor');
     const follower = document.getElementById('cursorFollower');
     let mx=0,my=0,fx=0,fy=0;
     document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx-5+'px';cursor.style.top=my-5+'px';});
     (function loop(){fx+=(mx-fx)*0.12;fy+=(my-fy)*0.12;follower.style.left=fx-18+'px';follower.style.top=fy-18+'px';requestAnimationFrame(loop);})();
+
+    // Sticky nav
     const nav=document.getElementById('navbar');
     window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+
+    // Reveal
     const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');obs.unobserve(e.target);}});},{threshold:0.08});
     document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+    // Filter
     document.querySelectorAll('.filter-btn').forEach(btn=>{
       btn.addEventListener('click',()=>{
         document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
         const f=btn.dataset.filter;
-        document.querySelectorAll('.project-card[data-category]').forEach(card=>{card.style.display=(f==='all'||card.dataset.category===f)?'':'none';});
+        document.querySelectorAll('.project-card[data-category]').forEach(card=>{
+          card.style.display=(f==='all'||card.dataset.category===f)?'':'none';
+        });
       });
     });
+
+    // Hamburger / Mobile Nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+    function openMobileNav() {
+      hamburger.classList.add('open');
+      mobileNav.classList.add('open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileNav() {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
+    });
+
+    mobileNavOverlay.addEventListener('click', closeMobileNav);
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMobileNav();
+    });
+
     lucide.createIcons();
   </script>
 </body>
