@@ -1,0 +1,25 @@
+# Aurelia Agency - Robots.txt
+# This file tells search engines which pages to crawl
+
+User-agent: *
+Allow: /
+
+# Disallow private/admin areas (add if you have any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow CSS and JS files to be crawled
+Allow: /index.css
+Allow: /projects.css
+Allow: /index.js
+Allow: /projects.js
+Allow: /firestore.js
+
+# Allow image directory
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://www.aureliaagency.com/sitemap.xml
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1
