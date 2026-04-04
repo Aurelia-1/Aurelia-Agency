@@ -1386,8 +1386,9 @@ footer {
     height: 36px;
   }
 
+  /* CHANGED: hide phone/instagram/linkedin on mobile */
   .top-bar-right {
-    gap: 14px;
+    display: none;
   }
 
   nav {
@@ -1527,10 +1528,6 @@ footer {
 
 /* -- 480px: Small phones -- */
 @media (max-width: 480px) {
-  .top-bar-right {
-    display: none;
-  }
-
   .hero-tag {
     font-size: 11px;
     letter-spacing: 0.2em;
