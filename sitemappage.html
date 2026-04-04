@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Sitemap — Aurelia Agency</title>
+  <meta name="description" content="Complete sitemap of Aurelia Agency website. Navigate through our services, projects, about us, and contact pages.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #a0a0a0;
+      margin-bottom: 60px;
+    }
+
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .sitemap-section {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .sitemap-section:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #ffffff;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 10px;
+    }
+
+    .sitemap-links {
+      list-style: none;
+    }
+
+    .sitemap-links li {
+      margin-bottom: 12px;
+    }
+
+    .sitemap-links a {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .sitemap-links a:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .sitemap-links a:hover {
+      color: #ffffff;
+      padding-left: 25px;
+    }
+
+    .sitemap-links a:hover:before {
+      opacity: 1;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 60px;
+      padding: 15px 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(-5px);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .sitemap-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sitemap</h1>
+    <p class="subtitle">Navigate through all pages of Aurelia Agency</p>
+
+    <div class="sitemap-grid">
+      <!-- Main Pages -->
+      <div class="sitemap-section">
+        <h2 class="section-title">Main Pages</h2>
+        <ul class="sitemap-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Our Projects</a></li>
+        </ul>
+      </div>
+
+      <!-- Homepage Sections -->
+      <div class="sitemap-section">
+        <h2 class="section-title">Homepage Sections</h2>
+        <ul class="sitemap-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#owners">Meet the Owners</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#reviews">Client Reviews</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="sitemap-section">
+        <h2 class="section-title">Our Services</h2>
+        <ul class="sitemap-links">
+          <li><a href="index.html#services">Web Design & Development</a></li>
+          <li><a href="index.html#services">E-Commerce Solutions</a></li>
+          <li><a href="index.html#services">SaaS Development</a></li>
+          <li><a href="index.html#services">Corporate Websites</a></li>
+          <li><a href="index.html#services">UI/UX Design</a></li>
+          <li><a href="index.html#services">Branding & Identity</a></li>
+        </ul>
+      </div>
+
+      <!-- Featured Projects -->
+      <div class="sitemap-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <ul class="sitemap-links">
+          <li><a href="https://detailing-bros.vercel.app/" target="_blank" rel="noopener noreferrer">Detailing Bros Paint Protection</a></li>
+          <li><a href="https://thrift-bazar-umer.vercel.app/" target="_blank" rel="noopener noreferrer">Thrift Bazar E-Commerce</a></li>
+          <li><a href="https://cryptotelegramgroups.vercel.app/" target="_blank" rel="noopener noreferrer">Crypto Groups Hub</a></li>
+          <li><a href="https://onecallsolution-t.vercel.app/" target="_blank" rel="noopener noreferrer">One Call Solution App</a></li>
+          <li><a href="https://meraj-limited.vercel.app/" target="_blank" rel="noopener noreferrer">Advanced Fabrication Engineering</a></li>
+          <li><a href="https://usibility-hub-clone.vercel.app/" target="_blank" rel="noopener noreferrer">UsabilityHub Landing Page</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div class="sitemap-section">
+        <h2 class="section-title">Connect With Us</h2>
+        <ul class="sitemap-links">
+          <li><a href="tel:+923193921895">Call: +92 319 3921895</a></li>
+          <li><a href="https://www.instagram.com/_aureliaa_._" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://linkedin.com/in/aurelia-agency-a1263a400" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="index.html#contact">Contact Form</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal & Info -->
+      <div class="sitemap-section">
+        <h2 class="section-title">Additional</h2>
+        <ul class="sitemap-links">
+          <li><a href="sitemap.xml">XML Sitemap</a></li>
+          <li><a href="robots.txt">Robots.txt</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </div>
+</body>
+</html>
