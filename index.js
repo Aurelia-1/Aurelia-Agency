@@ -1,5 +1,4 @@
-
-    // Initialize Lucide Icons
+// Initialize Lucide Icons
     lucide.createIcons();
 
     // ── CURSOR ──

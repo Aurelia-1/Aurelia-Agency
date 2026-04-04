@@ -1,5 +1,4 @@
-﻿
-    // Cursor animation
+﻿// Cursor animation
     document.addEventListener('DOMContentLoaded', function () {
       const cursor = document.querySelector('.cursor');
       const cursorFollower = document.querySelector('.cursor-follower');
@@ -55,4 +54,3 @@
       // Initialize Lucide icons
       lucide.createIcons();
     });
-  

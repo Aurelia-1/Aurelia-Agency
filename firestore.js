@@ -77,4 +77,3 @@ export async function updateContactStatus(docId, status) {
 }
 
 export { db, app };
-
