@@ -49,7 +49,7 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   
   <link rel="stylesheet" href="index.css">
   
@@ -654,6 +654,8 @@
       mobileNav.setAttribute('aria-hidden', 'false');
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
+      // Re-render lucide icons inside the drawer every time it opens
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
     function closeMobileNav() {
@@ -677,14 +679,10 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeMobileNav();
     });
-</script>
+  </script>
 
   <script type="module" src="index.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-    });
-  </script>
+
 </body>
 
 </html>
