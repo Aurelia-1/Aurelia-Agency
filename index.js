@@ -130,3 +130,10 @@ function updateVisitors() {
 
 // har 2.5 sec change
 setInterval(updateVisitors, 2500);
+
+function toggleDesc(btn) {
+  const desc = btn.previousElementSibling;
+  const isHidden = desc.style.display === 'none';
+  desc.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? 'See less ↑' : 'See more ↓';
+}
