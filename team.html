@@ -158,7 +158,7 @@
           <p class="member-title">Full Stack Developer</p>
           
           <p class="member-bio">
-            Multi-skilled digital professional specializing in Full Stack Development, SEO, Shopify Store Development, and Digital Marketing.
+           
           </p>
           
           <div class="description-container">
@@ -189,7 +189,7 @@
           <p class="member-title">Full Stack Developer</p>
           
           <p class="member-bio">
-            Dynamic and results-oriented professional specializing in Full Stack Development, SEO, Digital Marketing, Graphics Designing, and Social Media Management.
+        
           </p>
           
           <div class="description-container">
@@ -220,7 +220,7 @@
           <p class="member-title">Full Stack Developer & SEO Content Writer</p>
           
           <p class="member-bio">
-            Versatile Full Stack Developer and SEO Content Writer at Aurelia Agency, blending technical excellence with strategic storytelling.
+            
           </p>
           
           <div class="description-container">
@@ -246,7 +246,7 @@
           <p class="member-title">Full Stack Developer</p>
           
           <p class="member-bio">
-            Skilled Full Stack Developer at Aurelia Agency, known for delivering seamless and high-performance digital solutions.
+
           </p>
           
           <div class="description-container">
@@ -272,7 +272,7 @@
           <p class="member-title">Graphic Designer</p>
           
           <p class="member-bio">
-            Creative Graphic Designer at Aurelia Agency, bringing visual concepts to life with elegance and strategy.
+        
           </p>
           
           <div class="description-container">
@@ -298,9 +298,7 @@
           <p class="member-title">Digital Marketer</p>
           
           <p class="member-bio">
-            Dynamic Digital Marketer at Aurelia Agency, embodying creativity, confidence, and a strong vision for empowering brands.
-          </p>
-          
+         
           <div class="description-container">
             <p class="member-description">
               Tehreem Fatima is a dynamic Digital Marketer at Aurelia Agency, embodying creativity, confidence, and a strong vision for empowering brands in the digital space. With expertise in Meta advertising, social media strategy, and audience growth, she crafts impactful campaigns that blend elegance with performance. Driven by innovation and a results-focused mindset, she not only helps businesses scale but also represents the rising power of women leading and transforming the future of digital marketing.
@@ -351,14 +349,164 @@
     </div>
   </footer>
 
+  <!-- MODAL OVERLAY & BACKDROP -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  
+  <!-- TEAM MEMBER MODAL -->
+  <div class="modal-container" id="memberModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">
+        <i data-lucide="x"></i>
+      </button>
+      
+      <div class="modal-header">
+        <img src="" alt="" class="modal-member-image" id="modalMemberImage">
+      </div>
+      
+      <div class="modal-body">
+        <h2 class="modal-member-name" id="modalMemberName"></h2>
+        <p class="modal-member-title" id="modalMemberTitle"></p>
+        
+        <div class="modal-description-section">
+          <p class="modal-member-description" id="modalMemberDescription"></p>
+        </div>
+        
+        <div class="modal-member-links" id="modalMemberLinks"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- SCRIPTS -->
   <!-- SEE MORE / DESCRIPTION TOGGLE -->
   <script>
+    // Team member data
+    const teamMembers = {
+      'Mudassir Shaikh': {
+        name: 'Mudassir Shaikh',
+        title: 'Full Stack Developer',
+        image: './images/newest mudassir.jpeg',
+        bio: 'Multi-skilled digital professional specializing in Full Stack Development, SEO, Shopify Store Development, and Digital Marketing.',
+        description: 'Mudassir Shaikh is a multi-skilled digital professional specializing in Full Stack Development, SEO, Shopify Store Development, Digital Marketing, and Social Media Management. With a strong ability to build responsive, high-performing websites and create conversion-focused eCommerce solutions, he helps brands grow their online presence effectively. Alongside his technical expertise, he brings creativity through graphics designing and video editing, delivering visually compelling content that enhances brand identity. As a dedicated freelancer, Mudassir combines innovation, strategy, and execution to provide impactful digital solutions that drive real results.',
+        links: [
+          { text: 'Portfolio →', url: 'https://mudassir-shaikh-dev.vercel.app/' },
+          { text: 'LinkedIn', url: 'https://www.linkedin.com/in/mudassir-shaikh-dev/' }
+        ]
+      },
+      'Ahmed Qureshi': {
+        name: 'Ahmed Qureshi',
+        title: 'Full Stack Developer',
+        image: './images/new ahmed .jpeg',
+        bio: 'Dynamic and results-oriented professional specializing in Full Stack Development, SEO, Digital Marketing, Graphics Designing, and Social Media Management.',
+        description: 'Ahmed Qureshi is a dynamic and results-oriented professional with expertise in Full Stack Development, SEO, Digital Marketing, Graphics Designing, and Social Media Management. He specializes in building responsive and high-performance web applications while implementing effective SEO strategies to enhance online visibility. With a strong background in digital marketing and social media management, Ahmed helps brands grow through targeted campaigns and engaging content. His creative edge in graphics designing further strengthens brand identity, making him a versatile asset dedicated to delivering impactful digital solutions.',
+        links: [
+          { text: 'Portfolio →', url: 'https://ahmed-qureshi-three.vercel.app/' },
+          { text: 'LinkedIn', url: 'https://linkedin.com/in/ahmed-qureshi' }
+        ]
+      },
+      'Usama Ahmed': {
+        name: 'Usama Ahmed',
+        title: 'Full Stack Developer & SEO Content Writer',
+        image: './images/usama ahmed.jpeg',
+        bio: 'Versatile Full Stack Developer and SEO Content Writer at Aurelia Agency, blending technical excellence with strategic storytelling.',
+        description: 'Usama Ahmed is a versatile Full Stack Developer and SEO Content Writer at Aurelia Agency, blending technical excellence with strategic storytelling to build powerful digital experiences. With expertise in both frontend and backend development, along with search-optimized content creation, he crafts high-performing websites and content that drive visibility, engagement, and growth. Driven by innovation and precision, he plays a key role in shaping brands with a refined digital presence and delivering results that reflect both performance and sophistication.',
+        links: []
+      },
+      'Hassan Javed': {
+        name: 'Hassan Javed',
+        title: 'Full Stack Developer',
+        image: './images/hasan javed.jpeg',
+        bio: 'Skilled Full Stack Developer at Aurelia Agency, known for delivering seamless and high-performance digital solutions.',
+        description: 'Hassan Javed is a skilled Full Stack Developer at Aurelia Agency, known for delivering seamless and high-performance digital solutions with a refined touch of modern development. With expertise across both frontend and backend technologies, he builds scalable, user-focused websites that combine functionality with elegant design. Driven by precision and innovation, he plays a vital role in transforming ideas into sophisticated digital experiences that elevate brands in the competitive online landscape.',
+        links: []
+      },
+      'Abdul Rehman': {
+        name: 'Abdul Rehman',
+        title: 'Graphic Designer',
+        image: './images/abdul rehman.jpeg',
+        bio: 'Creative Graphic Designer at Aurelia Agency, bringing visual concepts to life with elegance and strategy.',
+        description: 'Abdul Rehman is a creative Graphic Designer at Aurelia Agency, bringing visual concepts to life with a perfect blend of elegance and strategy. With a keen eye for detail and a passion for modern aesthetics, he designs visually compelling graphics that capture attention and elevate brand identity. Focused on creativity and precision, he plays a key role in crafting designs that not only look premium but also communicate powerful brand stories in the digital space.',
+        links: []
+      },
+      'Tehreem Fatima': {
+        name: 'Tehreem Fatima',
+        title: 'Digital Marketer',
+        image: './images/tahreem.jpg',
+        bio: 'Dynamic Digital Marketer at Aurelia Agency, embodying creativity, confidence, and a strong vision for empowering brands.',
+        description: 'Tehreem Fatima is a dynamic Digital Marketer at Aurelia Agency, embodying creativity, confidence, and a strong vision for empowering brands in the digital space. With expertise in Meta advertising, social media strategy, and audience growth, she crafts impactful campaigns that blend elegance with performance. Driven by innovation and a results-focused mindset, she not only helps businesses scale but also represents the rising power of women leading and transforming the future of digital marketing.',
+        links: []
+      }
+    };
+
+    function openMemberModal(memberName) {
+      const member = teamMembers[memberName];
+      if (!member) return;
+
+      // Populate modal
+      document.getElementById('modalMemberImage').src = member.image;
+      document.getElementById('modalMemberImage').alt = member.name;
+      document.getElementById('modalMemberName').textContent = member.name;
+      document.getElementById('modalMemberTitle').textContent = member.title;
+      document.getElementById('modalMemberDescription').textContent = member.description;
+
+      // Add links if exist
+      const linksContainer = document.getElementById('modalMemberLinks');
+      linksContainer.innerHTML = '';
+      if (member.links.length > 0) {
+        const linksDiv = document.createElement('div');
+        linksDiv.className = 'modal-links';
+        member.links.forEach(link => {
+          const a = document.createElement('a');
+          a.href = link.url;
+          a.target = '_blank';
+          a.className = 'modal-link';
+          a.textContent = link.text;
+          linksDiv.appendChild(a);
+        });
+        linksContainer.appendChild(linksDiv);
+      }
+
+      // Show modal
+      document.getElementById('memberModal').classList.add('active');
+      document.getElementById('modalBackdrop').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMemberModal() {
+      document.getElementById('memberModal').classList.remove('active');
+      document.getElementById('modalBackdrop').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('modalBackdrop').addEventListener('click', closeMemberModal);
+    document.getElementById('modalClose').addEventListener('click', closeMemberModal);
+
+    // Close modal on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && document.getElementById('memberModal').classList.contains('active')) {
+        closeMemberModal();
+      }
+    });
+
+    // Open modal on member card image click
+    document.querySelectorAll('.member-card').forEach(card => {
+      const img = card.querySelector('.member-image');
+      if (img) {
+        img.addEventListener('click', function() {
+          const memberName = card.querySelector('.member-name').textContent;
+          openMemberModal(memberName);
+        });
+      }
+    });
+
+    // Update See More button to open modal
     document.querySelectorAll('.see-more-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const container = this.closest('.description-container');
-        container.classList.toggle('expanded');
-        this.textContent = container.classList.contains('expanded') ? 'See Less' : 'See More';
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const card = this.closest('.member-card');
+        const memberName = card.querySelector('.member-name').textContent;
+        openMemberModal(memberName);
       });
     });
   </script>
