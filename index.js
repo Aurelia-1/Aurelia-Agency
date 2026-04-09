@@ -18,7 +18,7 @@
       requestAnimationFrame(animateFollower);
     }
     animateFollower();
-    document.querySelectorAll('a, button, .service-card, .project-card, .review-card, .owner-card').forEach(el => {
+    document.querySelectorAll('a, button, .service-card, .project-card, .review-card, .owner-card, .team-member-card').forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursor.style.transform = 'scale(2.5)';
         follower.style.transform = 'scale(1.5)';
