@@ -396,6 +396,7 @@
 .reveal-delay-3.active {
   animation-delay: 0.3s;
 }
+<<<<<<< HEAD
 
 /* -- MODAL STYLES -- */
 .modal-backdrop {
@@ -574,3 +575,38 @@
     height: 32px;
   }
 }
+=======
+/* -- FOUNDERS GRID: 2 columns on large screens -- */
+.founders-grid {
+  grid-template-columns: repeat(2, minmax(280px, 400px));
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+@media (max-width: 768px) {
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -- SEE MORE BUTTON -- */
+.see-more-btn {
+  background: none;
+  border: none;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  transition: color 0.3s ease;
+  display: inline; /* bio ke saath same line mein */
+  vertical-align: baseline;
+}
+.see-more-btn:hover {
+  color: #ffffff;
+}
+>>>>>>> 86d6a0f0a198f64b0ecaabd4689793a633d48e48
