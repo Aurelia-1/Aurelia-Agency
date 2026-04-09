@@ -116,30 +116,74 @@
 
 <body>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <span>✦ Premium Digital Agency — Pakistan's Finest</span>
-    <div class="top-bar-stats">
-      <span id="visitors">200+ Visitors</span>
+  <!-- ============================================================
+       INTRO ANIMATION OVERLAY — disappears after ~5 seconds
+       ============================================================ -->
+  <div id="intro-overlay">
+    <div class="intro-scene">
+      <div class="intro-ring intro-ring-4"><div class="intro-dot"></div></div>
+      <div class="intro-ring intro-ring-3"><div class="intro-dot"></div></div>
+      <div class="intro-ring intro-ring-2"><div class="intro-dot"></div></div>
+      <div class="intro-ring intro-ring-1"><div class="intro-dot"></div></div>
+      <div class="intro-globe-wrap">
+        <svg class="intro-globe-svg" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="introGlobeGrad" cx="38%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="rgba(195,1,1,0.35)" />
+              <stop offset="60%" stop-color="rgba(195,1,1,0.18)" />
+              <stop offset="100%" stop-color="rgba(195,1,1,0.06)" />
+            </radialGradient>
+            <radialGradient id="introShineGrad" cx="35%" cy="30%" r="45%">
+              <stop offset="0%" stop-color="rgba(255,50,50,0.22)" />
+              <stop offset="100%" stop-color="rgba(195,1,1,0.04)" />
+            </radialGradient>
+            <clipPath id="introGlobeClip">
+              <circle cx="170" cy="170" r="155" />
+            </clipPath>
+          </defs>
+          <circle cx="170" cy="170" r="158" fill="none" stroke="rgba(195,1,1,0.2)" stroke-width="1.5" />
+          <circle cx="170" cy="170" r="155" fill="url(#introGlobeGrad)" stroke="rgba(195,1,1,0.45)" stroke-width="1" />
+          <g clip-path="url(#introGlobeClip)" stroke="rgba(195,1,1,0.28)" stroke-width="0.8" fill="none">
+            <ellipse cx="170" cy="170" rx="155" ry="30" />
+            <ellipse cx="170" cy="170" rx="155" ry="68" />
+            <ellipse cx="170" cy="170" rx="155" ry="110" />
+            <ellipse cx="170" cy="170" rx="155" ry="145" />
+            <line x1="15" y1="170" x2="325" y2="170" />
+          </g>
+          <g clip-path="url(#introGlobeClip)" stroke="rgba(195,1,1,0.28)" stroke-width="0.8" fill="none">
+            <ellipse cx="170" cy="170" rx="30" ry="155" />
+            <ellipse cx="170" cy="170" rx="68" ry="155" />
+            <ellipse cx="170" cy="170" rx="110" ry="155" />
+            <line x1="170" y1="15" x2="170" y2="325" />
+          </g>
+          <g clip-path="url(#introGlobeClip)" fill="rgba(195,1,1,0.55)" stroke="rgba(195,1,1,0.75)" stroke-width="0.8">
+            <path d="M88,86 Q76,100 78,120 Q82,140 100,146 Q116,154 124,140 Q134,124 130,106 Q124,88 110,80 Z" />
+            <path d="M114,172 Q103,188 106,214 Q109,236 121,240 Q133,242 138,224 Q143,204 138,182 Q133,162 120,166 Z" />
+            <path d="M184,84 Q175,90 176,107 Q177,121 186,124 Q195,127 200,115 Q206,103 200,91 Q195,81 185,82 Z" />
+            <path d="M180,136 Q170,148 172,174 Q174,196 184,206 Q194,216 202,206 Q210,194 208,168 Q206,142 196,133 Z" />
+            <path d="M220,80 Q204,84 202,102 Q200,118 212,128 Q228,136 244,126 Q258,114 255,95 Q251,76 235,77 Z" />
+            <path d="M240,200 Q226,206 226,221 Q226,234 239,238 Q251,240 256,228 Q260,218 253,206 Q247,196 240,198 Z" />
+          </g>
+          <circle cx="170" cy="170" r="155" fill="url(#introShineGrad)" />
+          <circle cx="170" cy="15" r="3" fill="rgba(195,1,1,0.9)" />
+          <circle cx="170" cy="325" r="3" fill="rgba(195,1,1,0.55)" />
+        </svg>
+      </div>
     </div>
-    <div class="top-bar-right">
-      <a href="tel:+923193921895">
-        <i data-lucide="phone" class="top-bar-icon"></i>
-        +92 319 3921895
-      </a>
-      <a href="https://www.instagram.com/_aureliaa_._">
-        <i data-lucide="instagram" class="top-bar-icon"></i>
-        Instagram
-      </a>
-      <a href="https://linkedin.com/in/aurelia-agency-a1263a400">
-        <i data-lucide="linkedin" class="top-bar-icon"></i>
-        LinkedIn
-      </a>
+
+    <div class="intro-brand">
+      <div class="intro-brand-name">AURELIA</div>
+      <div class="intro-brand-sub">Agency</div>
+    </div>
+    <div class="intro-tagline">Premium Digital Agency</div>
+    <div class="intro-bar-wrap">
+      <div class="intro-bar-fill"></div>
     </div>
   </div>
+  <!-- END INTRO OVERLAY -->
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
 
   <!-- NAV -->
   <nav id="navbar">
@@ -301,7 +345,7 @@
             </svg>
             <div class="orb-label">
               <i data-lucide="globe"></i>
-              Global Reach
+              <span id="visitors">200+ Visitors</span>
             </div>
           </div>
         </div>
@@ -453,6 +497,7 @@
       </a>
     </div>
   </section>
+
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="about-inner">
@@ -592,7 +637,7 @@
             <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required></div>
           </div>
           <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required></div>
-          <div class="form-group">x
+          <div class="form-group">
             <label>Service Interested In</label>
             <select name="service" required>
               <option>Social Media Marketing</option>
@@ -657,6 +702,22 @@
     })();
   </script>
 
+  <!-- INTRO OVERLAY REMOVAL SCRIPT -->
+  <script>
+    (function () {
+      var overlay = document.getElementById('intro-overlay');
+      // After CSS fade-out animation ends (fires at ~5.2s), remove from DOM entirely
+      overlay.addEventListener('animationend', function (e) {
+        if (e.animationName === 'introOverlayFadeOut') {
+          overlay.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+      // Lock scroll while intro plays
+      document.body.style.overflow = 'hidden';
+    })();
+  </script>
+
   <!-- HAMBURGER / MOBILE NAV SCRIPT -->
   <script>
     const hamburger = document.getElementById('hamburger');
@@ -669,7 +730,6 @@
       mobileNav.setAttribute('aria-hidden', 'false');
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-      // Re-render lucide icons inside the drawer every time it opens
       if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
