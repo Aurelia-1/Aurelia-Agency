@@ -210,7 +210,7 @@
 }
 
 .member-description {
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.5;
   color: #a0a0a0;
   margin: 0 0 8px;
@@ -396,7 +396,6 @@
 .reveal-delay-3.active {
   animation-delay: 0.3s;
 }
-<<<<<<< HEAD
 
 /* -- MODAL STYLES -- */
 .modal-backdrop {
@@ -575,7 +574,6 @@
     height: 32px;
   }
 }
-=======
 /* -- FOUNDERS GRID: 2 columns on large screens -- */
 .founders-grid {
   grid-template-columns: repeat(2, minmax(280px, 400px));
@@ -609,4 +607,3 @@
 .see-more-btn:hover {
   color: #ffffff;
 }
->>>>>>> 86d6a0f0a198f64b0ecaabd4689793a633d48e48
