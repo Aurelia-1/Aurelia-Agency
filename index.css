@@ -620,7 +620,7 @@ nav.scrolled {
   letter-spacing: 0.3em;
   color: var(--red);
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 1px;
 }
 
 .hero-h1 {
@@ -1888,6 +1888,12 @@ footer {
 .rv-track .review-card {
   flex: 0 0 360px;
   width: 360px;
+}
+
+.browser-bar {
+  height: 32px; background: #181818;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: center; padding: 0 14px; gap: 8px;
 }
 
 @keyframes rvScroll {
