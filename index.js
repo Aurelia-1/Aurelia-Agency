@@ -1,3 +1,8 @@
+// ═══════════════════════════════════════
+//   FIRESTORE IMPORTS
+// ═══════════════════════════════════════
+import { submitReview, getApprovedReviews } from './firestore.js';
+
 // Initialize Lucide Icons
     lucide.createIcons();
 
@@ -218,51 +223,98 @@ function toggleDesc(btn) {
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
   };
 
-  window.submitRvForm = function() {
+  window.submitRvForm = async function() {
     var name = document.getElementById('rvName').value.trim();
     var biz = document.getElementById('rvBusiness').value.trim();
     var pos = document.getElementById('rvPosition').value.trim();
     var text = document.getElementById('rvText').value.trim();
-    if (!name || !text || !rvRating) { return; }
-
-    var starsHtml = '';
-    for (var i = 0; i < rvRating; i++) {
-      starsHtml += '<i data-lucide="star" style="width:14px;height:14px;fill:var(--red);stroke:var(--red);"></i>';
+    if (!name || !text || !rvRating) { 
+      alert('Sab fields fill karein aur rating select karein!');
+      return; 
     }
 
-    var card = document.createElement('div');
-    card.className = 'review-card';
-    card.style.flex = '0 0 360px';
-    card.innerHTML =
-      '<div class="review-quote">"</div>' +
-      '<div class="review-stars">' + starsHtml + '</div>' +
-      '<p class="review-text">' + text + '</p>' +
-      '<div class="review-author">' +
-        '<div class="review-avatar">' + name[0].toUpperCase() + '</div>' +
-        '<div>' +
-          '<div class="review-name">' + name + '</div>' +
-          '<div class="review-location">' + pos + (biz ? ', ' + biz : '') + '</div>' +
-        '</div>' +
-      '</div>';
-    track.appendChild(card);
+    // Disable button & show loading
+    const submitBtn = document.querySelector('#rvForm button[onclick="submitRvForm()"]');
+    if (submitBtn) {
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+    }
 
-    if (typeof lucide !== 'undefined') lucide.createIcons();
+    try {
+      // Submit to Firestore
+      const result = await submitReview({
+        name: name,
+        business: biz,
+        position: pos,
+        text: text,
+        rating: rvRating
+      });
 
-    buildDots();
-    goTo(maxIdx());
+      if (result.success) {
+        // Clear form
+        document.getElementById('rvName').value = '';
+        document.getElementById('rvBusiness').value = '';
+        document.getElementById('rvPosition').value = '';
+        document.getElementById('rvText').value = '';
+        rvRating = 0;
+        highlightStars(0);
 
-    document.getElementById('rvName').value = '';
-    document.getElementById('rvBusiness').value = '';
-    document.getElementById('rvPosition').value = '';
-    document.getElementById('rvText').value = '';
-    rvRating = 0;
-    highlightStars(0);
+        // Show success message
+        var suc = document.getElementById('rvSuccess');
+        if (suc) {
+          suc.textContent = '✓ Review submitted! Will appear after admin approval.';
+          suc.style.display = 'block';
+        }
 
-    var suc = document.getElementById('rvSuccess');
-    suc.style.display = 'block';
-    setTimeout(function() {
-      suc.style.display = 'none';
-      document.getElementById('rvForm').style.display = 'none';
-    }, 2500);
+        setTimeout(function() {
+          if (suc) suc.style.display = 'none';
+          var form = document.getElementById('rvForm');
+          if (form) form.style.display = 'none';
+        }, 3000);
+      } else {
+        alert('Error: ' + (result.error || 'Failed to submit review'));
+      }
+    } catch (err) {
+      console.error('Submit error:', err);
+      alert('Error: ' + err.message);
+    } finally {
+      // Re-enable button
+      if (submitBtn) {
+        submitBtn.textContent = 'Submit Review';
+        submitBtn.disabled = false;
+      }
+    }
   };
+
+  // Load approved reviews from Firestore when page loads
+  window.addEventListener('load', async function() {
+    try {
+      const approvedReviews = await getApprovedReviews();
+      if (approvedReviews.length > 0) {
+        track.innerHTML = ''; // Clear default reviews
+        approvedReviews.forEach(rv => {
+          const starsHtml = '<i data-lucide="star" style="width:14px;height:14px;fill:var(--red);stroke:var(--red);"></i>'.repeat(rv.rating || 0);
+          const card = document.createElement('div');
+          card.className = 'review-card';
+          card.style.flex = '0 0 360px';
+          card.innerHTML =
+            '<div class="review-quote">"</div>' +
+            '<div class="review-stars">' + starsHtml + '</div>' +
+            '<p class="review-text">' + rv.text + '</p>' +
+            '<div class="review-author">' +
+              '<div class="review-avatar">' + (rv.name || '?')[0].toUpperCase() + '</div>' +
+              '<div>' +
+                '<div class="review-name">' + (rv.name || 'Anonymous') + '</div>' +
+                '<div class="review-location">' + (rv.position || '') + (rv.business ? ', ' + rv.business : '') + '</div>' +
+              '</div>' +
+            '</div>';
+          track.appendChild(card);
+        });
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        buildDots();
+      }
+    } catch (err) {
+      console.error('Error loading reviews:', err);
+    }
+  });
 })();
