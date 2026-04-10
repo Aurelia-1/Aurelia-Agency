@@ -1,6 +1,21 @@
 // Initialize Lucide Icons
     lucide.createIcons();
 
+    // ── THEME TOGGLE (Dark ↔ Light) ──
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      // Restore saved theme on load
+      if (localStorage.getItem('aurelia-theme') === 'light') {
+        document.body.classList.add('theme-light');
+      }
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('theme-light');
+        localStorage.setItem('aurelia-theme',
+          document.body.classList.contains('theme-light') ? 'light' : 'dark'
+        );
+      });
+    }
+
     // ── CURSOR ──
     const cursor = document.getElementById('cursor');
     const follower = document.getElementById('cursorFollower');
@@ -22,12 +37,12 @@
       el.addEventListener('mouseenter', () => {
         cursor.style.transform = 'scale(2.5)';
         follower.style.transform = 'scale(1.5)';
-        follower.style.borderColor = 'rgba(200,16,46,0.8)';
+        follower.style.borderColor = document.body.classList.contains('theme-blue') ? 'rgba(26,107,204,0.8)' : 'rgba(200,16,46,0.8)';
       });
       el.addEventListener('mouseleave', () => {
         cursor.style.transform = 'scale(1)';
         follower.style.transform = 'scale(1)';
-        follower.style.borderColor = 'rgba(200,16,46,0.5)';
+        follower.style.borderColor = document.body.classList.contains('theme-blue') ? 'rgba(26,107,204,0.5)' : 'rgba(200,16,46,0.5)';
       });
     });
 

@@ -1,0 +1,268 @@
+/* ================================================================
+   AURELIA — mobile-nav-fix.css
+   Load AFTER fixes.css (last mein)
+   Fixes:
+   1. Mobile nav z-index — content ke upar aaye
+   2. Mobile nav links kaam karein
+   3. Projects page hamburger fix
+   4. Add Review button — black text, dark red border
+   ================================================================ */
+
+/* ══════════════════════════════════════════════════════════════
+   1. MOBILE NAV — Z-INDEX & OVERLAY FIX
+   Problem: drawer content ke peeche ja raha tha
+   ══════════════════════════════════════════════════════════════ */
+
+/* Mobile nav wrapper — sabse upar */
+.mobile-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 9000 !important;      /* nav (z:100) se bahut upar */
+  pointer-events: none !important;
+  display: block !important;     /* hamesha DOM mein ho, sirf pointer-events se control */
+}
+
+.mobile-nav.open {
+  pointer-events: all !important;
+}
+
+/* Overlay — puri screen dhak le */
+.mobile-nav-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(5, 5, 5, 0) !important;
+  transition: background 0.4s ease !important;
+  z-index: 1 !important;
+}
+
+.mobile-nav.open .mobile-nav-overlay {
+  background: rgba(5, 5, 5, 0.75) !important;
+}
+
+/* Light theme mein overlay */
+body.theme-light .mobile-nav.open .mobile-nav-overlay {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Drawer — right side se slide */
+.mobile-nav-drawer {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: min(320px, 85vw) !important;
+  height: 100% !important;
+  height: 100dvh !important;     /* dynamic viewport height for mobile browsers */
+  background: var(--darker, #050505) !important;
+  border-left: 1px solid var(--border) !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 90px 36px 48px !important;
+  z-index: 2 !important;         /* overlay ke upar */
+  overflow-y: auto !important;
+}
+
+body.theme-light .mobile-nav-drawer {
+  background: var(--bg2, #eaeae8) !important;
+}
+
+.mobile-nav.open .mobile-nav-drawer {
+  transform: translateX(0) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   2. MOBILE NAV LINKS — fix karo
+   Problem: links click hone par kaam nahi kar rahi
+   ══════════════════════════════════════════════════════════════ */
+
+.mobile-nav-links {
+  list-style: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.mobile-nav-links li {
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.mobile-nav-links a {
+  display: block !important;
+  padding: 18px 0 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  color: var(--text-2, #e0e0e0) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, padding-left 0.2s ease !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a.nav-active {
+  color: var(--red) !important;
+  padding-left: 8px !important;
+}
+
+/* CTA button in mobile nav */
+.mobile-nav-cta {
+  margin-top: 32px !important;
+}
+
+.mobile-nav-cta .btn-contact {
+  width: 100% !important;
+  justify-content: center !important;
+  padding: 14px 20px !important;
+  font-size: 13px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: #ffffff !important;
+}
+
+/* Socials */
+.mobile-nav-socials {
+  display: flex !important;
+  gap: 16px !important;
+  margin-top: 28px !important;
+  padding-top: 24px !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+.mobile-nav-socials a {
+  width: 38px !important;
+  height: 38px !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #cccccc !important;
+  transition: color 0.2s, border-color 0.2s !important;
+}
+
+.mobile-nav-socials a:hover {
+  color: var(--red) !important;
+  border-color: rgba(200,16,46,0.5) !important;
+}
+
+.mobile-nav-footer {
+  margin-top: 20px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.1em !important;
+  color: #555 !important;
+  text-transform: uppercase !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   3. HAMBURGER BUTTON — z-index fix
+   Problem: mobile nav ke peeche chala jata tha
+   ══════════════════════════════════════════════════════════════ */
+
+.hamburger {
+  position: relative !important;
+  z-index: 9100 !important;   /* mobile-nav se bhi upar — taaki close kar sake */
+}
+
+/* Nav bhi upar raho jab menu open ho */
+nav {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   4. ADD REVIEW BUTTON — black text, dark red border
+   ══════════════════════════════════════════════════════════════ */
+
+#rvToggleBtn {
+  /* Override inline styles */
+  color: #111111 !important;
+  border: 1.5px solid #8b0000 !important;     /* dark red border */
+  background: transparent !important;
+  padding: 12px 28px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  transition: all 0.3s ease !important;
+  border-radius: 2px !important;
+}
+
+#rvToggleBtn:hover {
+  color: #ffffff !important;
+  background: #8b0000 !important;
+  border-color: #8b0000 !important;
+}
+
+/* Light theme */
+body.theme-light #rvToggleBtn {
+  color: #111111 !important;
+  border-color: #8b0000 !important;
+}
+
+body.theme-light #rvToggleBtn:hover {
+  color: #ffffff !important;
+  background: #8b0000 !important;
+}
+
+/* Dark theme */
+body:not(.theme-light):not(.theme-blue) #rvToggleBtn {
+  color: #111111 !important;
+  border-color: #8b0000 !important;
+  background: rgba(255,255,255,0.85) !important;
+}
+
+body:not(.theme-light):not(.theme-blue) #rvToggleBtn:hover {
+  color: #ffffff !important;
+  background: #8b0000 !important;
+}
+
+/* Blue theme */
+body.theme-blue #rvToggleBtn {
+  color: #111111 !important;
+  border-color: #8b0000 !important;
+  background: rgba(255,255,255,0.85) !important;
+}
+
+body.theme-blue #rvToggleBtn:hover {
+  color: #ffffff !important;
+  background: #8b0000 !important;
+  border-color: #8b0000 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   5. BODY SCROLL LOCK — jab nav open ho
+   ══════════════════════════════════════════════════════════════ */
+
+body.nav-open {
+  overflow: hidden !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   6. SMALL SCREEN — responsive fixes
+   ══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+  .mobile-nav-drawer {
+    width: 100vw !important;     /* chhoti screen par full width */
+    padding: 80px 24px 40px !important;
+  }
+
+  .mobile-nav-links a {
+    font-size: 17px !important;
+    padding: 20px 0 !important;
+  }
+}
