@@ -607,3 +607,38 @@
 .see-more-btn:hover {
   color: #ffffff;
 }
+
+/* ── TEAM PAGE BLUE THEME OVERRIDES ── */
+body.theme-blue .team-member-card {
+  border-color: rgba(26, 107, 204, 0.2);
+}
+body.theme-blue .team-member-card:hover {
+  border-color: rgba(26, 107, 204, 0.4);
+}
+body.theme-blue .member-badge,
+body.theme-blue .founder-badge {
+  background: #1a6bcc;
+}
+body.theme-blue .coming-soon-container {
+  background: linear-gradient(135deg, rgba(26,107,204,0.08) 0%, rgba(26,107,204,0.04) 100%);
+}
+body.theme-blue .team-cta {
+  background: linear-gradient(135deg, rgba(26,107,204,0.1) 0%, rgba(26,107,204,0.05) 100%);
+}
+body.theme-blue .team-hero {
+  background: linear-gradient(135deg, rgba(26,107,204,0.05) 0%, rgba(26,107,204,0.02) 100%);
+}
+body.theme-blue .modal-container {
+  border-color: rgba(26,107,204,0.3);
+}
+body.theme-blue .modal-close {
+  background: rgba(26,107,204,0.2);
+  border-color: rgba(26,107,204,0.4);
+}
+body.theme-blue .modal-close:hover {
+  background: rgba(26,107,204,0.4);
+  border-color: #1a6bcc;
+}
+body.theme-blue .modal-links {
+  border-top-color: rgba(26,107,204,0.2);
+}

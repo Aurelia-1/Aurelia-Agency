@@ -47,6 +47,17 @@
   
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="team.css">
+  <link rel="stylesheet" href="theme-overhaul.css">
+  <script>
+    (function(){
+      if(localStorage.getItem('aurelia-theme')==='light'){
+        document.documentElement.style.background='#f4f4f2';
+        document.addEventListener('DOMContentLoaded',function(){
+          document.body.classList.add('theme-light');
+        });
+      }
+    })();
+  </script>
 </head>
 
 <body>
@@ -80,7 +91,13 @@
       </li>
     </ul>
 
-    
+    <!-- Hamburger (mobile only) -->
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
@@ -206,7 +223,68 @@
           </div>
         </div>
       </div>
-      <!-- Team Member 3: Abdul Rehman -->
+
+      <!-- Team Member 3: Usama Ahmed -->
+      <div class="team-member-card member-card reveal reveal-delay-2">
+        <div class="member-frame">
+          <div class="member-image-wrapper">
+            <img src="./images/usama ahmed.jpeg" alt="Usama Ahmed - Full Stack Developer & SEO Content Writer" class="member-image">
+          </div>
+          <div class="member-badge">SEO Expert, Developer</div>
+        </div>
+        
+        <div class="member-content">
+          <h3 class="member-name">Usama Ahmed</h3>
+          <p class="member-title">Full Stack Developer & SEO Content Writer</p>
+          
+          <p class="member-bio">
+
+            
+          </p>
+          
+          <div class="description-container">
+            <p class="member-description">
+              Usama Ahmed is a versatile Full Stack Developer and SEO Content Writer at Aurelia Agency, blending technical excellence with strategic storytelling to build powerful digital experiences. With expertise in both frontend and backend development, along with search-optimized content creation, he crafts high-performing websites and content that drive visibility, engagement, and growth. Driven by innovation and precision, he plays a key role in shaping brands with a refined digital presence and delivering results that reflect both performance and sophistication.
+            </p>
+            <button class="see-more-btn">See More</button>
+          </div>
+          </p>
+          
+          <p class="member-description" style="display: none;">
+            Usama Ahmed is a versatile Full Stack Developer and SEO Content Writer at Aurelia Agency, blending technical excellence with strategic storytelling to build powerful digital experiences. With expertise in both frontend and backend development, along with search-optimized content creation, he crafts high-performing websites and content that drive visibility, engagement, and growth. Driven by innovation and precision, he plays a key role in shaping brands with a refined digital presence and delivering results that reflect both performance and sophistication.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Team Member 4: Hassan Javed -->
+      <div class="team-member-card member-card reveal reveal-delay-3">
+        <div class="member-frame">
+          <div class="member-image-wrapper">
+            <img src="./images/hasan javed.jpeg" alt="Hassan Javed - Full Stack Developer" class="member-image">
+          </div>
+          <div class="member-badge">Developer</div>
+        </div>
+        
+        <div class="member-content">
+          <h3 class="member-name">Hassan Javed</h3>
+          <p class="member-title">Full Stack Developer</p>
+          
+          <p class="member-bio">
+
+
+          </p>
+          
+          <div class="description-container">
+            <p class="member-description">
+              Hassan Javed is a skilled Full Stack Developer at Aurelia Agency, known for delivering seamless and high-performance digital solutions with a refined touch of modern development. With expertise across both frontend and backend technologies, he builds scalable, user-focused websites that combine functionality with elegant design. Driven by precision and innovation, he plays a vital role in transforming ideas into sophisticated digital experiences that elevate brands in the competitive online landscape.
+            </p>
+            <button class="see-more-btn">See More</button>
+          </div>
+        </div>
+      </div>
+
+    
       <div class="team-member-card member-card reveal reveal-delay-4">
         <div class="member-frame">
           <div class="member-image-wrapper">
@@ -232,17 +310,17 @@
         </div>
       </div>
 
-      <!-- Team Member 4:  -->
+      <!-- Team Member 6: Tehreem Fatima -->
       <div class="team-member-card member-card reveal reveal-delay-5">
         <div class="member-frame">
           <div class="member-image-wrapper">
-            <img src="" alt="Digital Marketer- Coming Soon" class="member-image">
+            <img src="./images/tahreem.jpg" alt="Tehreem Fatima - Digital Marketer" class="member-image">
           </div>
           <div class="member-badge">Marketer</div>
         </div>
         
         <div class="member-content">
-          <h3 class="member-name">Coming Soon</h3>
+          <h3 class="member-name">Tehreem Fatima</h3>
           <p class="member-title">Digital Marketer</p>
           
           <p class="member-bio">
@@ -250,7 +328,7 @@
           
           <div class="description-container">
             <p class="member-description">
-              Coming soon...
+              Tehreem Fatima is a dynamic Digital Marketer at Aurelia Agency, embodying creativity, confidence, and a strong vision for empowering brands in the digital space. With expertise in Meta advertising, social media strategy, and audience growth, she crafts impactful campaigns that blend elegance with performance. Driven by innovation and a results-focused mindset, she not only helps businesses scale but also represents the rising power of women leading and transforming the future of digital marketing.
             </p>
             <button class="see-more-btn">See More</button>
           </div>
@@ -505,7 +583,25 @@
     desc.style.display = isHidden ? 'block' : 'none';
     btn.textContent = isHidden ? 'See less ↑' : 'See more ↓';
   }
-</script>
+  </script>
+
+  <script>
+    // Theme Toggle (Dark ↔ Light) — runs on every page
+    (function() {
+      if (localStorage.getItem('aurelia-theme') === 'light') {
+        document.body.classList.add('theme-light');
+      }
+      var btn = document.getElementById('themeToggle');
+      if (btn) {
+        btn.addEventListener('click', function() {
+          document.body.classList.toggle('theme-light');
+          localStorage.setItem('aurelia-theme',
+            document.body.classList.contains('theme-light') ? 'light' : 'dark'
+          );
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>

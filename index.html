@@ -90,6 +90,18 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="theme-overhaul.css">
+  <script>
+    // Apply saved theme instantly to avoid flash
+    (function(){
+      if(localStorage.getItem('aurelia-theme')==='light'){
+        document.documentElement.style.background='#f4f4f2';
+        document.addEventListener('DOMContentLoaded',function(){
+          document.body.classList.add('theme-light');
+        });
+      }
+    })();
+  </script>
   
   <script type="application/ld+json">
   {
@@ -210,6 +222,12 @@
         </a>
       </li>
     </ul>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
 
     <!-- Hamburger (mobile only) -->
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -749,7 +767,7 @@
           </div>
           <div class="contact-detail">
             <div class="contact-detail-icon"><i data-lucide="mail"></i></div>
-            <div class="contact-detail-text"><label>Email</label><span>aureliaagency9@gmail.com</span></div>
+            <div class="contact-detail-text"><label>Email</label><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2544505740494c444442404b465c1c654248444c490b464a48">[email&#160;protected]</a></span></div>
           </div>
           <div class="contact-detail">
             <div class="contact-detail-icon"><i data-lucide="map-pin"></i></div>
@@ -782,7 +800,7 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
     (function () {
       emailjs.init({ publicKey: "5G0fZV4btyBiuyidt" });
@@ -837,14 +855,9 @@
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMobileNav);
     });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeMobileNav();
-    });
   </script>
 
   <script type="module" src="index.js"></script>
 
 </body>
-
 </html>

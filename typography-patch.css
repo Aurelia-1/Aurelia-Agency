@@ -1,0 +1,80 @@
+/* ============================================================
+   TYPOGRAPHY & READABILITY PATCH
+   Drop after theme-overhaul.css
+   ============================================================ */
+
+/* ── Font rendering ── */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Line heights & spacing ── */
+.hero-h1      { letter-spacing: -0.025em; line-height: 1.06; }
+.section-h2   { letter-spacing: -0.02em; }
+.hero-desc    { font-size: 15px; line-height: 1.85; font-weight: 400; }
+.service-desc { font-size: 14px; line-height: 1.8; font-weight: 400; }
+.project-desc { font-size: 13px; line-height: 1.75; }
+.review-text  { font-size: 14px; line-height: 1.8; }
+.about-body   { font-size: 15px; line-height: 1.85; }
+.member-bio   { font-size: 12px; line-height: 1.65; }
+
+/* ── Headings clean ── */
+h1, h2, h3, h4 { font-weight: 700; }
+.section-h2, .hero-h1, .team-hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* ── Uppercase labels clean ── */
+.section-tag,
+.hero-tag,
+.service-num,
+.stat-label,
+.member-title,
+.project-category,
+.filter-label {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+}
+
+/* ── Nav ── */
+.nav-links a {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  font-weight: 500;
+}
+
+/* ── Buttons ── */
+.btn-primary, .btn-contact {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+
+/* ── Cards ── */
+.service-title  { font-size: 18px; letter-spacing: -0.01em; }
+.project-title  { font-size: 18px; letter-spacing: -0.01em; }
+.owner-name,
+.member-name    { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+.review-name    { font-size: 14px; font-weight: 700; }
+
+/* ── Stat numbers ── */
+.stat-num, .stat-suffix {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* ── Footer ── */
+.footer-copy, .footer-links a { font-size: 12px; letter-spacing: 0.04em; }
+
+/* ── Mobile: tighten up ── */
+@media (max-width: 768px) {
+  .hero-desc    { font-size: 14px; }
+  .service-desc { font-size: 13px; }
+  .stat-num, .stat-suffix { font-size: 38px; }
+}

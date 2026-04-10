@@ -1,0 +1,512 @@
+/* ================================================================
+   AURELIA — theme.css
+   Handles: light/dark tokens, grid bg, typography, all components
+   Load AFTER index.css, projects.css, team.css
+   ================================================================ */
+
+/* ── 1. DARK TOKENS (default — already set in :root) ── */
+:root {
+  --red:           #C8102E;
+  --bg:            #0a0a0a;
+  --bg2:           #050505;
+  --surface:       rgba(255,255,255,0.03);
+  --surface-hover: rgba(255,255,255,0.055);
+  --text-1:        #f0f0f0;
+  --text-2:        #c8c8c8;
+  --text-3:        #888888;
+  --text-4:        #505050;
+  --card:          #111111;
+  --nav-bg:        rgba(10,10,10,0.93);
+  --input-bg:      rgba(255,255,255,0.04);
+  --input-border:  rgba(255,255,255,0.09);
+  --grid:          rgba(200,16,46,0.07);
+  --shadow:        0 20px 60px rgba(0,0,0,0.55);
+  --border:        rgba(200,16,46,0.22);
+  --footer-copy:   #555;
+}
+
+/* ── 2. LIGHT TOKENS ── */
+body.theme-light {
+  --red:           #9e0b20;
+  --bg:            #f4f4f2;
+  --bg2:           #eaeae8;
+  --surface:       rgba(255,255,255,0.92);
+  --surface-hover: #ffffff;
+  --text-1:        #0f0f0f;
+  --text-2:        #383838;
+  --text-3:        #636363;
+  --text-4:        #9a9a9a;
+  --card:          #ffffff;
+  --nav-bg:        rgba(244,244,242,0.95);
+  --input-bg:      rgba(0,0,0,0.04);
+  --input-border:  rgba(0,0,0,0.11);
+  --grid:          rgba(158,11,32,0.07);
+  --shadow:        0 8px 40px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.05);
+  --border:        rgba(158,11,32,0.18);
+  --footer-copy:   #aaa;
+}
+
+/* ── 3. BASE ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg) !important;
+  color: var(--text-1);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ── 4. GRID BACKGROUND ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transition: background-image 0.3s;
+}
+
+/* ── 5. ALL SECTIONS ABOVE GRID ── */
+nav, .top-bar, .hero, .stats, .services, .projects,
+.owners, .about, .reviews, .contact, footer,
+.page-hero, .filter-bar, .projects-section, .cta-strip,
+.team-hero, .team-section, .team-cta, .mobile-nav {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 6. NAV ── */
+nav.scrolled {
+  background: var(--nav-bg) !important;
+  border-color: var(--border) !important;
+}
+
+.brand { color: var(--text-1) !important; }
+.sub   { color: var(--red)   !important; }
+.logo-bar { background: var(--red) !important; }
+
+.nav-links a,
+.mobile-nav-links a { color: var(--text-2) !important; }
+.nav-links a:hover,
+.nav-links a.nav-active,
+.nav-links a.active,
+.mobile-nav-links a:hover,
+.mobile-nav-links a.nav-active,
+.mobile-nav-links a.active { color: var(--red) !important; }
+
+.hamburger span { background: var(--text-1) !important; }
+
+.mobile-nav-drawer {
+  background: var(--bg2) !important;
+  border-left-color: var(--border) !important;
+}
+.mobile-nav-links li   { border-bottom-color: var(--border) !important; }
+.mobile-nav-socials    { border-top-color: var(--border) !important; }
+.mobile-nav-socials a  { color: var(--text-3) !important; border-color: var(--border) !important; }
+.mobile-nav-socials a:hover { color: var(--red) !important; }
+.mobile-nav-footer     { color: var(--text-4) !important; }
+
+/* ── 7. TOP BAR ── */
+.top-bar {
+  background: var(--surface) !important;
+  border-bottom-color: var(--border) !important;
+  color: var(--text-3) !important;
+}
+.top-bar-right a { color: var(--text-3) !important; }
+.top-bar-right a:hover { color: var(--text-1) !important; }
+
+/* ── 8. THEME TOGGLE ── */
+.theme-toggle {
+  border-color: var(--border) !important;
+  background: var(--surface) !important;
+  color: var(--text-1) !important;
+  transition: all 0.25s !important;
+}
+.theme-toggle:hover {
+  background: var(--red) !important;
+  border-color: var(--red) !important;
+  color: #fff !important;
+}
+.theme-toggle .icon-moon { display: block; }
+.theme-toggle .icon-sun  { display: none; }
+body.theme-light .theme-toggle .icon-moon { display: none; }
+body.theme-light .theme-toggle .icon-sun  { display: block; }
+
+/* ── 9. HERO ── */
+.hero-h1 {
+  font-size: clamp(66px, 7.8vw, 110px) !important;
+  font-weight: 700 !important;
+  line-height: 1.0 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--text-1) !important;
+}
+.hero-h1 em   { color: var(--red) !important; font-style: italic; }
+.hero-tag     { color: var(--red) !important; font-size: 11px; letter-spacing: 0.32em; font-weight: 600; }
+.hero-desc    { color: var(--text-2) !important; font-size: 16px !important; line-height: 1.9 !important; font-weight: 400 !important; }
+.hero-scroll  { color: var(--text-3) !important; }
+.scroll-line  { background: linear-gradient(90deg, var(--text-3), transparent) !important; }
+.hero-bg-text { color: var(--grid) !important; }
+.orb-label    { color: var(--text-3) !important; }
+.hero-number-value { color: var(--red) !important; }
+.hero-number span  { color: var(--text-3) !important; }
+
+/* ── 10. BUTTONS ── */
+.btn-primary, .btn-contact {
+  background: var(--red) !important;
+  color: #ffffff !important;
+}
+.btn-outline {
+  color: var(--text-1) !important;
+  border-color: var(--text-3) !important;
+}
+body.theme-light .btn-outline { border-color: rgba(0,0,0,0.3) !important; }
+.btn-outline:hover {
+  color: var(--red) !important;
+  border-color: var(--red) !important;
+}
+.btn-submit {
+  background: var(--red) !important;
+  color: #fff !important;
+}
+
+/* ── 11. STATS ── */
+.stats {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+.stat-label { color: var(--text-3) !important; }
+.stat-item  { border-color: var(--border) !important; }
+
+/* ── 12. SECTION HEADINGS ── */
+.section-tag    { color: var(--red)   !important; font-size: 11px; letter-spacing: 0.3em; font-weight: 600; }
+.section-h2     { color: var(--text-1) !important; font-size: clamp(38px, 4.5vw, 62px) !important; font-weight: 700 !important; line-height: 1.08 !important; letter-spacing: -0.02em !important; }
+.section-h2 em  { color: var(--red)   !important; }
+
+/* ── 13. SERVICES ── */
+.service-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+.service-card:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--red) !important;
+  box-shadow: var(--shadow) !important;
+}
+.service-title { color: var(--text-1) !important; font-size: 20px !important; font-weight: 700 !important; letter-spacing: -0.01em !important; }
+.service-desc  { color: var(--text-2) !important; font-size: 14px !important; line-height: 1.85 !important; }
+.service-num   { color: var(--red) !important; opacity: 0.5; }
+.service-icon  { color: var(--red) !important; }
+.service-link  { color: var(--red) !important; }
+
+/* ── 14. PROJECT CARDS (index.html) ── */
+.projects { background: var(--bg2) !important; }
+
+.project-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+.project-card:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--red) !important;
+  box-shadow: var(--shadow) !important;
+}
+.project-title    { color: var(--text-1) !important; font-size: 18px !important; font-weight: 700 !important; letter-spacing: -0.01em !important; }
+.project-category { color: var(--red) !important; font-size: 10px !important; letter-spacing: 0.22em !important; font-weight: 600 !important; }
+.project-desc     { color: var(--text-2) !important; font-size: 13px !important; line-height: 1.8 !important; }
+.project-num      { color: var(--red) !important; opacity: 0.35; }
+.project-foot     { border-top-color: var(--border) !important; }
+.project-arrow    { border-color: var(--border) !important; color: var(--red) !important; }
+.project-card:hover .project-arrow { background: var(--red) !important; border-color: var(--red) !important; color: #fff !important; }
+
+/* browser mockup bar */
+.project-cover { background: var(--card) !important; }
+.project-cover::before { background: var(--card) !important; filter: brightness(1.12); }
+body.theme-light .project-cover::before { background: #e0e0de !important; }
+body.theme-light .project-cover { background: #e0e0de !important; }
+.browser-url { color: var(--text-4) !important; }
+
+.tag {
+  border-color: var(--border) !important;
+  color: var(--text-3) !important;
+}
+
+/* ── 15. OWNERS (index.html) ── */
+.owners { background: var(--bg) !important; }
+.owner-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+.owner-card:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--red) !important;
+  box-shadow: var(--shadow) !important;
+}
+.owner-name  { color: var(--text-1) !important; font-size: 18px !important; font-weight: 700 !important; }
+.owner-title { color: var(--red)    !important; font-size: 11px !important; letter-spacing: 0.12em !important; }
+.owner-bio   { color: var(--text-2) !important; font-size: 14px !important; line-height: 1.8 !important; }
+.owner-link  { color: var(--red) !important; border-color: var(--border) !important; font-size: 11px !important; }
+.owner-link:hover { color: var(--text-1) !important; border-color: var(--red) !important; }
+
+/* ── 16. ABOUT ── */
+.about { background: var(--bg) !important; }
+.about-h2, .about-h2 *   { color: var(--text-1) !important; }
+.about-h2 em              { color: var(--red) !important; }
+.about-body               { color: var(--text-2) !important; font-size: 15px !important; line-height: 1.85 !important; }
+.about-label              { color: var(--red) !important; }
+.about-value-title        { color: var(--text-1) !important; font-weight: 700 !important; }
+.about-value-desc         { color: var(--text-3) !important; }
+.about-values, .about-value { border-color: var(--border) !important; }
+.about-year               { color: var(--red) !important; }
+.about-founded            { color: var(--text-3) !important; }
+
+/* ── 17. REVIEWS ── */
+.reviews { background: var(--bg2) !important; }
+.review-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+.review-card:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--red) !important;
+}
+.review-quote    { color: var(--red) !important; opacity: 0.35; }
+.review-text     { color: var(--text-2) !important; font-size: 14px !important; line-height: 1.8 !important; }
+.review-name     { color: var(--text-1) !important; font-weight: 700 !important; font-size: 14px !important; }
+.review-location { color: var(--text-3) !important; font-size: 12px !important; }
+.review-avatar   { background: var(--red) !important; color: #fff !important; }
+
+/* review form */
+#rvForm { background: var(--surface) !important; border-color: var(--border) !important; }
+#rvForm input,
+#rvForm textarea {
+  background: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--text-1) !important;
+  border-radius: 3px;
+}
+#rvForm input::placeholder,
+#rvForm textarea::placeholder { color: var(--text-4) !important; }
+#rvForm input:focus,
+#rvForm textarea:focus {
+  border-color: var(--red) !important;
+  outline: none;
+}
+.rv-star-pick { color: var(--text-4) !important; }
+
+/* ── 18. CONTACT ── */
+.contact { background: var(--bg) !important; }
+
+.contact-detail-icon { color: var(--red) !important; border-color: var(--border) !important; }
+.contact-detail-text label { color: var(--text-3) !important; font-size: 11px !important; letter-spacing: 0.15em !important; text-transform: uppercase !important; font-weight: 600 !important; }
+.contact-detail-text span,
+.contact-detail-text a  { color: var(--text-2) !important; font-size: 15px !important; }
+.contact-info h3        { color: var(--text-1) !important; font-size: clamp(24px,3vw,36px) !important; font-weight: 700 !important; }
+.contact-info > p       { color: var(--text-2) !important; font-size: 14px !important; line-height: 1.8 !important; }
+
+.form-group label {
+  color: var(--text-3) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--text-1) !important;
+  font-size: 14px !important;
+  transition: border-color 0.2s, background 0.2s !important;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--red) !important;
+  background: var(--surface) !important;
+  outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-4) !important; }
+
+body.theme-light .form-group select option { background: #fff; color: #111; }
+
+/* ── 19. FOOTER ── */
+footer {
+  background: var(--bg2) !important;
+  border-top-color: var(--border) !important;
+}
+.footer-copy     { color: var(--footer-copy) !important; font-size: 12px !important; }
+.footer-links a  { color: var(--text-3) !important; font-size: 12px !important; }
+.footer-links a:hover { color: var(--red) !important; }
+
+/* ── 20. CURSOR ── */
+.cursor          { background: var(--red) !important; }
+.cursor-follower { border-color: var(--border) !important; }
+
+/* ── 21. ORBIT + GLOBE ── */
+.orbit-ring { border-color: var(--border) !important; }
+.orbit-dot  { background: var(--red) !important; box-shadow: 0 0 14px var(--red) !important; }
+
+/* ── 22. PROJECTS PAGE (projects.css) ── */
+.page-hero {
+  background: var(--bg) !important;
+  border-bottom-color: var(--border) !important;
+}
+.hero-h1 { color: var(--text-1) !important; }  /* already covered above */
+.hero-stat-num   { color: var(--red) !important; font-size: 40px !important; font-weight: 600 !important; }
+.hero-stat-label { color: var(--text-3) !important; font-size: 10px !important; letter-spacing: 0.2em !important; }
+.hero-stat-line  { background: var(--border) !important; }
+
+.filter-bar {
+  background: var(--bg2) !important;
+  border-top-color: var(--border) !important;
+  border-bottom-color: var(--border) !important;
+}
+.filter-label { color: var(--text-3) !important; }
+.filter-btn {
+  background: transparent !important;
+  border-color: var(--border) !important;
+  color: var(--text-3) !important;
+}
+.filter-btn:hover { border-color: var(--red) !important; color: var(--text-1) !important; }
+.filter-btn.active { background: var(--red) !important; border-color: var(--red) !important; color: #fff !important; }
+
+.projects-section { background: var(--bg2) !important; }
+
+/* project cards on projects page (same classes, slightly different context) */
+.browser-bar {
+  background: var(--card) !important;
+  border-bottom-color: var(--border) !important;
+}
+body.theme-light .browser-bar { background: #e0e0de !important; }
+
+.project-card.coming-soon { border-color: var(--border) !important; background: transparent !important; }
+.coming-title { color: var(--text-4) !important; }
+.coming-sub   { color: var(--text-4) !important; opacity: 0.8; }
+.coming-icon  { color: var(--red) !important; opacity: 0.25; }
+
+.cta-strip {
+  border-color: var(--border) !important;
+  background: var(--surface) !important;
+}
+.cta-left h2    { color: var(--text-1) !important; font-size: clamp(26px,3.5vw,46px) !important; font-weight: 700 !important; line-height: 1.15 !important; }
+.cta-left h2 em { color: var(--red) !important; }
+.cta-left p     { color: var(--text-2) !important; font-size: 14px !important; line-height: 1.75 !important; }
+
+/* ── 23. TEAM PAGE (team.css) ── */
+.team-hero {
+  background: var(--bg) !important;
+  border-bottom: 1px solid var(--border);
+}
+.team-hero-title    { color: var(--text-1) !important; font-weight: 700 !important; }
+.team-hero-title em { color: var(--red) !important; }
+.team-hero-desc     { color: var(--text-2) !important; font-size: 16px !important; line-height: 1.8 !important; }
+
+.team-section           { background: var(--bg) !important; border-top-color: var(--border) !important; }
+.team-section:nth-child(even) { background: var(--bg2) !important; }
+.section-subtitle       { color: var(--text-3) !important; font-size: 13px !important; }
+
+.team-member-card {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+.team-member-card:hover {
+  background: var(--surface-hover) !important;
+  border-color: var(--red) !important;
+  box-shadow: var(--shadow) !important;
+}
+.member-name  { color: var(--text-1) !important; font-size: 15px !important; font-weight: 700 !important; }
+.team-member-card:hover .member-name { color: var(--red) !important; }
+.member-title { color: var(--red) !important; font-size: 9px !important; font-weight: 600 !important; letter-spacing: 0.1em !important; }
+.member-bio   { color: var(--text-2) !important; font-size: 12px !important; line-height: 1.65 !important; }
+.member-description { color: var(--text-3) !important; font-size: 13px !important; line-height: 1.65 !important; }
+.member-badge, .founder-badge { background: var(--red) !important; }
+.member-link  { color: var(--red) !important; border-color: var(--border) !important; }
+.member-link:hover { color: var(--text-1) !important; border-color: var(--red) !important; }
+.see-more-btn { color: var(--red) !important; }
+.see-more-btn:hover { color: var(--text-1) !important; }
+
+/* member image frame */
+.member-frame { background: var(--bg2) !important; }
+
+.coming-soon-container {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+.coming-soon-header h3 { color: var(--text-1) !important; font-weight: 700 !important; }
+.coming-soon-header p  { color: var(--text-2) !important; }
+
+.team-cta { background: var(--bg2) !important; border-top-color: var(--border) !important; }
+.team-cta-content h2 { color: var(--text-1) !important; font-weight: 700 !important; }
+.team-cta-content p  { color: var(--text-2) !important; }
+
+/* Team modal */
+.modal-backdrop  { background: rgba(0,0,0,0.6) !important; }
+body.theme-light .modal-backdrop { background: rgba(244,244,242,0.7) !important; }
+.modal-container { background: var(--bg) !important; border-color: var(--border) !important; }
+.modal-close     { background: var(--surface) !important; border-color: var(--border) !important; color: var(--text-1) !important; }
+.modal-close:hover { background: var(--red) !important; border-color: var(--red) !important; color: #fff !important; }
+.modal-member-name  { color: var(--red) !important; font-weight: 700 !important; }
+.modal-member-title { color: var(--red) !important; }
+.modal-member-description { color: var(--text-2) !important; font-size: 13px !important; line-height: 1.75 !important; }
+.modal-links { border-top-color: var(--border) !important; }
+.modal-link  { color: var(--red) !important; }
+.modal-link:hover { color: var(--text-1) !important; }
+
+/* ── 24. SMOOTH TRANSITIONS ── */
+body, nav, .top-bar, .mobile-nav-drawer,
+.service-card, .project-card, .owner-card,
+.team-member-card, .review-card, footer,
+.stats, .modal-container, .filter-btn,
+.btn-primary, .btn-contact, .btn-submit,
+.form-group input, .form-group select, .form-group textarea,
+#rvForm input, #rvForm textarea,
+.cta-strip, .coming-soon-container {
+  transition:
+    background 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+/* ── 25. SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+/* ── 26. LIGHT THEME — extra contrast helpers ── */
+body.theme-light .mobile-nav-overlay {
+  background: rgba(244,244,242,0.0) !important;
+}
+body.theme-light .mobile-nav.open .mobile-nav-overlay {
+  background: rgba(0,0,0,0.35) !important;
+}
+
+/* ── 27. MOBILE — theme toggle BEFORE hamburger ── */
+/* On mobile, nav uses flex. We force toggle before hamburger via order */
+@media (max-width: 1024px) {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* logo stays at start (order 0 default) */
+  /* nav-links hidden, theme-toggle and hamburger are visible */
+  .nav-links   { display: none !important; }
+  .theme-toggle { order: 2; margin-left: auto; margin-right: 10px; }
+  .hamburger   { order: 3; margin-left: 0; }
+}
