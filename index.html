@@ -679,7 +679,7 @@
       </div>
     </div>
     <button onclick="submitRvForm()" style="background:var(--red);color:#fff;border:none;padding:16px 40px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Submit Review</button>
-    <div id="rvSuccess" style="display:none;margin-top:16px;padding:14px 20px;border:1px solid rgba(200,16,46,0.4);background:rgba(200,16,46,0.08);color:var(--red);font-size:13px;letter-spacing:0.05em;">Shukriya! Aapka review successfully add ho gaya.</div>
+    <div id="rvSuccess" style="display:none;margin-top:16px;padding:14px 20px;border:1px solid rgba(200,16,46,0.4);background:rgba(200,16,46,0.08);color:var(--red);font-size:13px;letter-spacing:0.05em;">Thank You! Your review has been submitted successfully.</div>
   </div>
 
 </section>
@@ -706,51 +706,8 @@
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
   };
 
-  window.submitRvForm = function() {
-    var name     = document.getElementById('rvName').value.trim();
-    var biz      = document.getElementById('rvBusiness').value.trim();
-    var pos      = document.getElementById('rvPosition').value.trim();
-    var text     = document.getElementById('rvText').value.trim();
-    if (!name || !text || !rvRating) { return; }
-
-    var starsHtml = '';
-    for (var i = 0; i < rvRating; i++) {
-      starsHtml += '<i data-lucide="star" style="width:14px;height:14px;fill:var(--red);stroke:var(--red);"></i>';
-    }
-
-    var card = document.createElement('div');
-    card.className = 'review-card';
-    card.style.cssText = 'flex:0 0 360px;width:360px;';
-    card.innerHTML =
-      '<div class="review-quote">"</div>' +
-      '<div class="review-stars">' + starsHtml + '</div>' +
-      '<p class="review-text">' + text + '</p>' +
-      '<div class="review-author">' +
-        '<div class="review-avatar">' + name[0].toUpperCase() + '</div>' +
-        '<div>' +
-          '<div class="review-name">' + name + '</div>' +
-          '<div class="review-location">' + pos + (biz ? ', ' + biz : '') + '</div>' +
-        '</div>' +
-      '</div>';
-
-    var track = document.querySelector('.rv-track');
-    track.appendChild(card);
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-
-    document.getElementById('rvName').value = '';
-    document.getElementById('rvBusiness').value = '';
-    document.getElementById('rvPosition').value = '';
-    document.getElementById('rvText').value = '';
-    rvRating = 0;
-    highlightStars(0);
-
-    var suc = document.getElementById('rvSuccess');
-    suc.style.display = 'block';
-    setTimeout(function() {
-      suc.style.display = 'none';
-      document.getElementById('rvForm').style.display = 'none';
-    }, 2500);
-  };
+  // ── This function will be replaced by index.js module version ──
+  // window.submitRvForm is defined in index.js with Firestore integration
 })();
 </script>
 </section>
