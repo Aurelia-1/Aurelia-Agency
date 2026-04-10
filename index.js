@@ -137,3 +137,132 @@ function toggleDesc(btn) {
   desc.style.display = isHidden ? 'block' : 'none';
   btn.textContent = isHidden ? 'See less ↑' : 'See more ↓';
 }
+// Reviews section ke liye toggle function
+(function() {
+  var cur = 0;
+  var rvRating = 0;
+  var CARD_W = 384;
+
+  var track = document.getElementById('rvTrack');
+  var wrap = document.getElementById('rvWrap');
+  var dotsEl = document.getElementById('rvDots');
+
+  function totalCards() { return track.children.length; }
+
+  function visibleCount() {
+    var w = wrap.offsetWidth;
+    return Math.max(1, Math.floor((w + 24) / CARD_W));
+  }
+
+  function maxIdx() { return Math.max(0, totalCards() - visibleCount()); }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    var total = maxIdx() + 1;
+    for (var i = 0; i < total; i++) {
+      var d = document.createElement('div');
+      d.style.cssText = 'width:8px;height:8px;border-radius:50%;background:' + (i === cur ? 'var(--red)' : 'rgba(255,255,255,0.2)') + ';cursor:pointer;transition:all 0.2s;';
+      if (i === cur) { d.style.width = '24px'; d.style.borderRadius = '4px'; }
+      (function(idx){ d.addEventListener('click', function(){ goTo(idx); }); })(i);
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function goTo(n) {
+    cur = Math.max(0, Math.min(n, maxIdx()));
+    track.style.transform = 'translateX(-' + (cur * CARD_W) + 'px)';
+    buildDots();
+  }
+
+  document.getElementById('rvPrev').addEventListener('click', function(){ resetAuto(); goTo(cur - 1); });
+  document.getElementById('rvNext').addEventListener('click', function(){ resetAuto(); goTo(cur + 1); });
+
+  window.addEventListener('resize', function(){ buildDots(); goTo(Math.min(cur, maxIdx())); });
+
+  buildDots();
+
+  // Auto-play
+  var autoTimer;
+  function startAuto() {
+    autoTimer = setInterval(function() {
+      goTo(cur >= maxIdx() ? 0 : cur + 1);
+    }, 3000);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+
+  startAuto();
+
+  // Hover par pause
+  wrap.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+  wrap.addEventListener('mouseleave', function() { startAuto(); });
+
+  // Stars
+  var stars = document.querySelectorAll('.rv-star-pick');
+  stars.forEach(function(s) {
+    s.addEventListener('mouseenter', function(){ highlightStars(+s.dataset.v); });
+    s.addEventListener('mouseleave', function(){ highlightStars(rvRating); });
+    s.addEventListener('click', function(){ rvRating = +s.dataset.v; highlightStars(rvRating); });
+  });
+
+  function highlightStars(v) {
+    stars.forEach(function(s) {
+      s.style.color = (+s.dataset.v <= v) ? 'var(--red)' : 'rgba(255,255,255,0.2)';
+    });
+  }
+
+  window.toggleRvForm = function() {
+    var form = document.getElementById('rvForm');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  };
+
+  window.submitRvForm = function() {
+    var name = document.getElementById('rvName').value.trim();
+    var biz = document.getElementById('rvBusiness').value.trim();
+    var pos = document.getElementById('rvPosition').value.trim();
+    var text = document.getElementById('rvText').value.trim();
+    if (!name || !text || !rvRating) { return; }
+
+    var starsHtml = '';
+    for (var i = 0; i < rvRating; i++) {
+      starsHtml += '<i data-lucide="star" style="width:14px;height:14px;fill:var(--red);stroke:var(--red);"></i>';
+    }
+
+    var card = document.createElement('div');
+    card.className = 'review-card';
+    card.style.flex = '0 0 360px';
+    card.innerHTML =
+      '<div class="review-quote">"</div>' +
+      '<div class="review-stars">' + starsHtml + '</div>' +
+      '<p class="review-text">' + text + '</p>' +
+      '<div class="review-author">' +
+        '<div class="review-avatar">' + name[0].toUpperCase() + '</div>' +
+        '<div>' +
+          '<div class="review-name">' + name + '</div>' +
+          '<div class="review-location">' + pos + (biz ? ', ' + biz : '') + '</div>' +
+        '</div>' +
+      '</div>';
+    track.appendChild(card);
+
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    buildDots();
+    goTo(maxIdx());
+
+    document.getElementById('rvName').value = '';
+    document.getElementById('rvBusiness').value = '';
+    document.getElementById('rvPosition').value = '';
+    document.getElementById('rvText').value = '';
+    rvRating = 0;
+    highlightStars(0);
+
+    var suc = document.getElementById('rvSuccess');
+    suc.style.display = 'block';
+    setTimeout(function() {
+      suc.style.display = 'none';
+      document.getElementById('rvForm').style.display = 'none';
+    }, 2500);
+  };
+})();
