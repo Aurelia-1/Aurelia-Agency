@@ -1775,3 +1775,38 @@ footer {
   border-color: #a78bfa;
   color: #fff !important;
 }
+/* -- REVIEWS AUTO SCROLL -- */
+.rv-outer {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.rv-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: rvScroll 30s linear infinite;
+}
+
+.rv-track:hover {
+  animation-play-state: paused;
+}
+
+.rv-track .review-card {
+  flex: 0 0 360px;
+  width: 360px;
+}
+
+@keyframes rvScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .rv-track .review-card {
+    flex: 0 0 280px;
+    width: 280px;
+  }
+}
