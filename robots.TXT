@@ -19,7 +19,7 @@ Allow: /firestore.js
 Allow: /images/
 
 # Sitemap location
-Sitemap: https://www.aureliaagency.com/sitemap.xml
+Sitemap: https://www.aureliaagency.site/sitemap.xml
 
 # Crawl-delay (optional - helps prevent server overload)
 Crawl-delay: 1
