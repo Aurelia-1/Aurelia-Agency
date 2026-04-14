@@ -2,7 +2,7 @@
 // THEME TOGGLE — dark → light → blue → dark
 // =====================================================
 (function () {
-  const THEMES = ['dark', 'light'];
+  const THEMES = ['dark', 'light' ];
   const KEY = 'aurelia-theme';
 
   function applyTheme(theme) {
