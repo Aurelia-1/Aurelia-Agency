@@ -936,7 +936,10 @@
     });
   </script>
 
-  <script type="module" src="index.js"></script>
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<!-- Your firebase.js must come AFTER emailjs -->
+<script type="module" src="firebase.js"></script>
 </body>
 </html>
