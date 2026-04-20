@@ -26,51 +26,10 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firestore
 const db = getFirestore(app);
 
-// EmailJS Config
-const EMAILJS_PUBLIC_KEY = "5G0fZV4btyBiuyidt";
-const EMAILJS_SERVICE_ID = "service_82oceyp";
-const EMAILJS_AUTOREPLY_TEMPLATE = "template_28q3mah";   // Auto-reply to user
-const EMAILJS_CONTACT_TEMPLATE  = "template_hhblcmu";    // Notification to you
-
 // Initialize EmailJS
-emailjs.init(EMAILJS_PUBLIC_KEY);
+emailjs.init("5G0fZV4btyBiuyidt");
 
-// Send emails via EmailJS
-async function sendEmails(formData) {
-  const templateParams = {
-    from_name:  `${formData.firstName} ${formData.lastName}`,
-    first_name: formData.firstName,
-    last_name:  formData.lastName,
-    from_email: formData.email,
-    reply_to:   formData.email,
-    service:    formData.service,
-    message:    formData.message,
-  };
-
-  try {
-    // 1. Send auto-reply to the user
-    await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_AUTOREPLY_TEMPLATE,
-      templateParams
-    );
-    console.log("Auto-reply sent to:", formData.email);
-
-    // 2. Send contact notification to you
-    await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_CONTACT_TEMPLATE,
-      templateParams
-    );
-    console.log("Contact notification sent.");
-
-  } catch (error) {
-    console.error("EmailJS error:", error);
-    throw error; // bubble up so submitContactForm can catch it
-  }
-}
-
-// Function to submit contact form data to Firestore + send emails
+// Function to submit contact form data to Firestore + EmailJS
 export async function submitContactForm(formData) {
   try {
     // 1. Save to Firestore
@@ -85,8 +44,24 @@ export async function submitContactForm(formData) {
     });
     console.log("Firestore saved, ID:", docRef.id);
 
-    // 2. Send both emails
-    await sendEmails(formData);
+    // 2. EmailJS template params
+    const templateParams = {
+      from_name:  `${formData.firstName} ${formData.lastName}`,
+      first_name: formData.firstName,
+      last_name:  formData.lastName,
+      from_email: formData.email,
+      reply_to:   formData.email,
+      service:    formData.service,
+      message:    formData.message,
+    };
+
+    // 3. Auto-reply to user
+    await emailjs.send("service_82oceyp", "template_28q3mah", templateParams);
+    console.log("Auto-reply sent.");
+
+    // 4. Contact notification to you
+    await emailjs.send("service_82oceyp", "template_hhblcmu", templateParams);
+    console.log("Contact notification sent.");
 
     return { success: true, id: docRef.id };
 
