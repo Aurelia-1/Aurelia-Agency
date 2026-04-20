@@ -26,22 +26,45 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firestore
 const db = getFirestore(app);
 
-// Function to submit contact form data to Firestore
+// Initialize EmailJS
+emailjs.init("5G0fZV4btyBiuyidt");
+
+// Function to submit contact form data to Firestore + EmailJS
 export async function submitContactForm(formData) {
   try {
-    // Add document to 'contacts' collection
+    // 1. Save to Firestore
     const docRef = await addDoc(collection(db, "contacts"), {
       firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      service: formData.service,
-      message: formData.message,
+      lastName:  formData.lastName,
+      email:     formData.email,
+      service:   formData.service,
+      message:   formData.message,
       timestamp: serverTimestamp(),
-      status: "new"
+      status:    "new"
     });
-    
-    console.log("Contact form submitted successfully with ID:", docRef.id);
+    console.log("Firestore saved, ID:", docRef.id);
+
+    // 2. EmailJS template params
+    const templateParams = {
+      from_name:  `${formData.firstName} ${formData.lastName}`,
+      first_name: formData.firstName,
+      last_name:  formData.lastName,
+      from_email: formData.email,
+      reply_to:   formData.email,
+      service:    formData.service,
+      message:    formData.message,
+    };
+
+    // 3. Auto-reply to user
+    await emailjs.send("service_82oceyp", "template_28q3mah", templateParams);
+    console.log("Auto-reply sent.");
+
+    // 4. Contact notification to you
+    await emailjs.send("service_82oceyp", "template_hhblcmu", templateParams);
+    console.log("Contact notification sent.");
+
     return { success: true, id: docRef.id };
+
   } catch (error) {
     console.error("Error submitting contact form:", error);
     return { success: false, error: error.message };
