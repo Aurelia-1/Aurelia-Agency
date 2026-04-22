@@ -66,7 +66,7 @@ export async function submitContactForm(formData) {
     return { success: true, id: docRef.id };
 
   } catch (error) {
-    console.error("Error submitting contact form:", error);
+    console.error("Error submitting contact form:"  , error);
     return { success: false, error: error.message };
   }
 }
