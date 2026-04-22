@@ -203,11 +203,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function openNav() {
       hamburger.classList.add('open');
       mobileNav.classList.add('open');
+      if (mobileNavOverlay) mobileNavOverlay.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
     function closeNav() {
       hamburger.classList.remove('open');
       mobileNav.classList.remove('open');
+      if (mobileNavOverlay) mobileNavOverlay.classList.remove('open');
       document.body.style.overflow = '';
     }
     hamburger.addEventListener('click', () =>
