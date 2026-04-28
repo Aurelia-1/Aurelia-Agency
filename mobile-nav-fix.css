@@ -67,7 +67,8 @@ body.theme-light .mobile-nav.open .mobile-nav-overlay {
 }
 
 body.theme-light .mobile-nav-drawer {
-  background: var(--bg2, #eaeae8) !important;
+  background: #111111 !important;
+  border-left: 1px solid rgba(255,255,255,0.08) !important;
 }
 
 .mobile-nav.open .mobile-nav-drawer {
@@ -110,6 +111,10 @@ body.theme-light .mobile-nav-drawer {
 .mobile-nav-links a.nav-active {
   color: var(--red) !important;
   padding-left: 8px !important;
+}
+
+body.theme-light .mobile-nav-links a {
+  color: #e0e0e0 !important;
 }
 
 /* CTA button in mobile nav */

@@ -715,7 +715,7 @@ html, body {
 @media (max-width: 768px) {
   .mobile-nav-drawer {
     padding: 80px 28px 40px !important;
-    width: min(300px, 88vw) !important;
+    width: 75vw !important;
   }
 
   .mobile-nav-links a {

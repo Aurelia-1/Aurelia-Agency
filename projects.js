@@ -1,4 +1,4 @@
-﻿// =====================================================
+// =====================================================
 // THEME TOGGLE — dark → light → blue → dark
 // =====================================================
 (function () {
@@ -193,27 +193,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // ── HAMBURGER ──
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-
-  if (hamburger && mobileNav) {
-    function openNav() {
-      hamburger.classList.add('open');
-      mobileNav.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeNav() {
-      hamburger.classList.remove('open');
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    hamburger.addEventListener('click', () =>
-      mobileNav.classList.contains('open') ? closeNav() : openNav()
-    );
-    if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', closeNav);
-    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-  }
 });
