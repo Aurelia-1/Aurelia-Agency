@@ -258,19 +258,10 @@
 
 lucide.createIcons();
 
-// ── THEME TOGGLE ──
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) {
-  if (localStorage.getItem('aurelia-theme') === 'light') {
-    document.body.classList.add('theme-light');
-  }
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('theme-light');
-    localStorage.setItem('aurelia-theme',
-      document.body.classList.contains('theme-light') ? 'light' : 'dark'
-    );
-  });
-}
+// ── FORCE LIGHT THEME ──
+document.body.classList.add('theme-light');
+document.documentElement.style.background = '#f4f4f2';
+localStorage.setItem('aurelia-theme', 'light');
 
 // ── CURSOR ──
 const cursor = document.getElementById('cursor');
@@ -350,23 +341,45 @@ const heroNumber = document.querySelector('.hero-number');
 if (statsEl) countersObserver.observe(statsEl);
 if (heroNumber) countersObserver.observe(heroNumber);
 
-// ── CONTACT FORM ──
+// ── CONTACT FORM — With WhatsApp Integration ──
 const form = document.querySelector('#contactForm');
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = form.querySelector('.btn-submit span');
+    const firstName = form.querySelector('input[name="firstName"]').value;
+    const lastName = form.querySelector('input[name="lastName"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const service = form.querySelector('select[name="service"]').value;
+    const message = form.querySelector('textarea[name="message"]').value;
+    
     btn.textContent = 'Sending...';
+    
+    // Format message for WhatsApp
+    const whatsappMessage = `Hello! I'm interested in your services.%0A%0A*Contact Information:*%0AName: ${firstName} ${lastName}%0AEmail: ${email}%0AService: ${service}%0A%0A*Message:*%0A${message}`;
+    const whatsappUrl = `https://wa.me/923193921895?text=${whatsappMessage}`;
+    
+    // Send email via EmailJS
     emailjs.sendForm('service_82oceyp', 'template_hhblcmu', form).then(
       () => {
-        btn.textContent = 'Message Sent! ✓';
-        form.reset();
-        setTimeout(() => btn.textContent = 'Send Message →', 3000);
+        btn.textContent = 'Opening WhatsApp...';
+        // Open WhatsApp after email is sent
+        setTimeout(() => {
+          window.open(whatsappUrl, '_blank');
+          btn.textContent = 'Message Sent! ✓';
+          form.reset();
+          setTimeout(() => btn.textContent = 'Send Message →', 3000);
+        }, 800);
       },
       (error) => {
-        btn.textContent = 'Error! Please try again.';
+        btn.textContent = 'Error! Opening WhatsApp...';
+        // Open WhatsApp even if email fails
+        setTimeout(() => {
+          window.open(whatsappUrl, '_blank');
+          form.reset();
+          setTimeout(() => btn.textContent = 'Send Message →', 3000);
+        }, 800);
         console.error(error);
-        setTimeout(() => btn.textContent = 'Send Message →', 3000);
       }
     );
   });
