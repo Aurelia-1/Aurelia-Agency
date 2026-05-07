@@ -60,7 +60,9 @@
   }
 
   .hero-right {
-    display: none !important; /* Hide visual on mobile for better focus */
+    transform: scale(0.8);
+    display: flex !important; 
+    margin-top: 20px !important;
   }
 
   /* Hero text sizing */
@@ -195,9 +197,7 @@
     padding: 12px 20px !important;
   }
 
-  .logo {
-    width: 50px !important;
-  }
+
 
   .logo-text {
     gap: 2px !important;
@@ -218,7 +218,7 @@
 
   /* Mobile nav drawer improvements */
   .mobile-nav-drawer {
-    width: min(280px, 90vw) !important;
+    width: 75vw !important;
     padding: 80px 24px 40px !important;
   }
 
@@ -372,7 +372,7 @@
   }
 
   .mobile-nav-drawer {
-    width: 100% !important;
+    width: 75vw !important;
   }
 
   /* Better text sizing for very small screens */

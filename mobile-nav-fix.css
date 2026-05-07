@@ -1,28 +1,14 @@
-/* ================================================================
-   AURELIA — mobile-nav-fix.css
-   Load AFTER fixes.css (last mein)
-   Fixes:
-   1. Mobile nav z-index — content ke upar aaye
-   2. Mobile nav links kaam karein
-   3. Projects page hamburger fix
-   4. Add Review button — black text, dark red border
-   ================================================================ */
-
-/* ══════════════════════════════════════════════════════════════
-   1. MOBILE NAV — Z-INDEX & OVERLAY FIX
-   Problem: drawer content ke peeche ja raha tha
-   ══════════════════════════════════════════════════════════════ */
-
-/* Mobile nav wrapper — sabse upar */
 .mobile-nav {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  z-index: 9000 !important;      /* nav (z:100) se bahut upar */
+  z-index: 9000 !important;
+  /* nav (z:100) se bahut upar */
   pointer-events: none !important;
-  display: block !important;     /* hamesha DOM mein ho, sirf pointer-events se control */
+  display: block !important;
+  /* hamesha DOM mein ho, sirf pointer-events se control */
 }
 
 .mobile-nav.open {
@@ -54,7 +40,8 @@ body.theme-light .mobile-nav.open .mobile-nav-overlay {
   right: 0 !important;
   width: min(320px, 85vw) !important;
   height: 100% !important;
-  height: 100dvh !important;     /* dynamic viewport height for mobile browsers */
+  height: 100dvh !important;
+  /* dynamic viewport height for mobile browsers */
   background: var(--darker, #050505) !important;
   border-left: 1px solid var(--border) !important;
   transform: translateX(100%) !important;
@@ -62,12 +49,14 @@ body.theme-light .mobile-nav.open .mobile-nav-overlay {
   display: flex !important;
   flex-direction: column !important;
   padding: 90px 36px 48px !important;
-  z-index: 2 !important;         /* overlay ke upar */
+  z-index: 2 !important;
+  /* overlay ke upar */
   overflow-y: auto !important;
 }
 
 body.theme-light .mobile-nav-drawer {
-  background: var(--bg2, #eaeae8) !important;
+  background: #111111 !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .mobile-nav.open .mobile-nav-drawer {
@@ -112,6 +101,10 @@ body.theme-light .mobile-nav-drawer {
   padding-left: 8px !important;
 }
 
+body.theme-light .mobile-nav-links a {
+  color: #e0e0e0 !important;
+}
+
 /* CTA button in mobile nav */
 .mobile-nav-cta {
   margin-top: 32px !important;
@@ -151,7 +144,7 @@ body.theme-light .mobile-nav-drawer {
 
 .mobile-nav-socials a:hover {
   color: var(--red) !important;
-  border-color: rgba(200,16,46,0.5) !important;
+  border-color: rgba(200, 16, 46, 0.5) !important;
 }
 
 .mobile-nav-footer {
@@ -169,7 +162,8 @@ body.theme-light .mobile-nav-drawer {
 
 .hamburger {
   position: relative !important;
-  z-index: 9100 !important;   /* mobile-nav se bhi upar — taaki close kar sake */
+  z-index: 9100 !important;
+  /* mobile-nav se bhi upar — taaki close kar sake */
 }
 
 /* Nav bhi upar raho jab menu open ho */
@@ -186,7 +180,8 @@ nav {
 #rvToggleBtn {
   /* Override inline styles */
   color: #111111 !important;
-  border: 1.5px solid #8b0000 !important;     /* dark red border */
+  border: 1.5px solid #8b0000 !important;
+  /* dark red border */
   background: transparent !important;
   padding: 12px 28px !important;
   font-size: 13px !important;
@@ -222,7 +217,7 @@ body.theme-light #rvToggleBtn:hover {
 body:not(.theme-light):not(.theme-blue) #rvToggleBtn {
   color: #111111 !important;
   border-color: #8b0000 !important;
-  background: rgba(255,255,255,0.85) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
 }
 
 body:not(.theme-light):not(.theme-blue) #rvToggleBtn:hover {
@@ -234,7 +229,7 @@ body:not(.theme-light):not(.theme-blue) #rvToggleBtn:hover {
 body.theme-blue #rvToggleBtn {
   color: #111111 !important;
   border-color: #8b0000 !important;
-  background: rgba(255,255,255,0.85) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
 }
 
 body.theme-blue #rvToggleBtn:hover {
@@ -257,7 +252,8 @@ body.nav-open {
 
 @media (max-width: 480px) {
   .mobile-nav-drawer {
-    width: 100vw !important;     /* chhoti screen par full width */
+    width: 100vw !important;
+    /* chhoti screen par full width */
     padding: 80px 24px 40px !important;
   }
 
