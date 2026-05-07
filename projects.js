@@ -1,4 +1,4 @@
-// =====================================================
+﻿// =====================================================
 // THEME TOGGLE — dark → light → blue → dark
 // =====================================================
 (function () {
@@ -193,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-<<<<<<< HEAD
 
   // ── FILTER ──
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -243,6 +242,4 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', closeNav);
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
   }
-=======
->>>>>>> 19fa20c5d403bcacde852369963b878636daec63
 });
