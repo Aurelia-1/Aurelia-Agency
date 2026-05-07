@@ -194,6 +194,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // ── FILTER ──
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card:not(.coming-soon)');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      // Filter cards
+      projectCards.forEach(card => {
+        const category = card.dataset.category;
+        if (filter === 'all' || category === filter) {
+          card.style.display = '';
+          setTimeout(() => card.classList.add('active'), 10);
+        } else {
+          card.classList.remove('active');
+          setTimeout(() => card.style.display = 'none', 300);
+        }
+      });
+    });
+  });
+
   // ── HAMBURGER ──
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
