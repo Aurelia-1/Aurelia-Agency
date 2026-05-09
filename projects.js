@@ -134,7 +134,7 @@
 })();
 
 // =====================================================
-// MAIN — cursor, reveal, navbar, lucide
+// MAIN — navbar, reveal, filter, hamburger
 // =====================================================
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -148,11 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
   }
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  // Lucide icons
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 
   // ── REVEAL OBSERVER WITH STAGGERED DELAYS ──
   const observer = new IntersectionObserver((entries) => {
@@ -185,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── FILTER ──
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card:not(.coming-soon)');
+  const filterProjectCards = document.querySelectorAll('.project-card:not(.coming-soon)');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
