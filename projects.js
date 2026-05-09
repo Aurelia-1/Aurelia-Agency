@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const filter = btn.dataset.filter;
 
       // Filter cards
-      projectCards.forEach(card => {
+      filterProjectCards.forEach(card => {
         const category = card.dataset.category;
         if (filter === 'all' || category === filter) {
           card.style.display = '';
