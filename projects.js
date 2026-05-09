@@ -141,42 +141,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Lucide icons
   if (typeof lucide !== 'undefined') lucide.createIcons();
 
-  // ── CURSOR ──
-  const cursor = document.querySelector('.cursor');
-  const cursorFollower = document.querySelector('.cursor-follower');
-
-  if (cursor && cursorFollower) {
-    let mouseX = 0, mouseY = 0, followX = 0, followY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX; mouseY = e.clientY;
-      cursor.style.left = mouseX - 5 + 'px';
-      cursor.style.top  = mouseY - 5 + 'px';
-    });
-
-    function animateFollower() {
-      followX += (mouseX - followX) * 0.12;
-      followY += (mouseY - followY) * 0.12;
-      cursorFollower.style.left = followX - 18 + 'px';
-      cursorFollower.style.top  = followY - 18 + 'px';
-      requestAnimationFrame(animateFollower);
-    }
-    animateFollower();
-
-    document.querySelectorAll('a, button, .project-card, .service-card, .review-card').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(2.5)';
-        cursorFollower.style.transform = 'scale(1.5)';
-        cursorFollower.style.borderColor = 'rgba(200,16,46,0.8)';
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursorFollower.style.transform = 'scale(1)';
-        cursorFollower.style.borderColor = 'rgba(200,16,46,0.5)';
-      });
-    });
-  }
-
   // ── NAVBAR SCROLL ──
   const navbar = document.getElementById('navbar');
   if (navbar) {
@@ -185,14 +149,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ── REVEAL OBSERVER ──
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+
+  // ── REVEAL OBSERVER WITH STAGGERED DELAYS ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('active');
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Apply staggered reveal delays to project cards
+  const projectCards = document.querySelectorAll('.project-card:not(.coming-soon)');
+  projectCards.forEach((card, index) => {
+    const delayClass = `reveal-delay-${Math.min(index + 1, 12)}`;
+    card.classList.add(delayClass);
+    observer.observe(card);
+  });
+
+  // Observe coming-soon card
+  const comingSoon = document.querySelector('.project-card.coming-soon');
+  if (comingSoon) {
+    comingSoon.classList.add('reveal-delay-12');
+    observer.observe(comingSoon);
+  }
+
+  // Observe other reveal elements
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (!el.classList.contains('project-card')) {
+      observer.observe(el);
+    }
+  });
 
   // ── FILTER ──
   const filterBtns = document.querySelectorAll('.filter-btn');

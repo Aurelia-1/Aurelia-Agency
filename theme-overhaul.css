@@ -351,10 +351,6 @@ footer {
 .footer-links a  { color: var(--text-3) !important; font-size: 12px !important; }
 .footer-links a:hover { color: var(--red) !important; }
 
-/* ── 20. CURSOR ── */
-.cursor          { background: var(--red) !important; }
-.cursor-follower { border-color: var(--border) !important; }
-
 /* ── 21. ORBIT + GLOBE ── */
 .orbit-ring { border-color: var(--border) !important; }
 .orbit-dot  { background: var(--red) !important; box-shadow: 0 0 14px var(--red) !important; }

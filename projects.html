@@ -150,11 +150,6 @@
     </script>
   </head>
   <body>
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
-
-    
-
     <!-- NAV -->
     <nav id="navbar">
       <div class="logo">
@@ -170,7 +165,6 @@
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#pricing">Packages</a></li>
         <li><a href="projects.html" class="nav-active">Our Projects</a></li>
-        <li><a href="team.html">Team</a></li>
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#reviews">Reviews</a></li>
         <li>
@@ -205,7 +199,6 @@
           <li><a href="index.html#services">Services</a></li>
           <li><a href="index.html#pricing">Packages</a></li>
           <li><a href="projects.html" class="nav-active">Our Projects</a></li>
-          <li><a href="team.html">Team</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#reviews">Reviews</a></li>
         </ul>
@@ -374,7 +367,55 @@
           </div>
         </a>
 
-        <!-- 02 Detailing Bros -->
+        <!--  Trade Empire -->
+        <a
+          href="https://tradeempire.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-card wide reveal"
+          data-category="ecommerce"
+        >
+          <div class="project-media reveal reveal-delay-2">
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span class="dot red"></span><span class="dot yellow"></span
+                ><span class="dot green"></span>
+              </div>
+              <div class="browser-url">tradeempire.com</div>
+            </div>
+            <div class="project-img-wrap">
+              <img
+                src="./images/Trade empire.png"
+                alt="Laptop Wale - Modern Laptop & Tech Store Website"
+              />
+              <div class="img-overlay">
+                <span>View Project <i data-lucide="arrow-up-right"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div>
+              <div class="project-category"> FINANCE & DIGITAL UNIVERSITY</div>
+              <h3 class="project-title">Trade Empire – Finance & Digital University Platform</h3>
+              <p class="project-desc">
+                Trade Empire is a modern trading and finance website designed for trading mentors, investment communities, and financial education brands. Built with a premium dark UI, responsive layout, and professional business-focused design, the website helps establish authority, build trust, and attract potential clients through a clean and engaging user experience.
+
+              </p>
+              <div class="project-tags">
+                <span class="tag">Responsive</span
+                ><span class="tag">Finance</span> <span class="tag">SEO Optimized</span>
+                <span class="tag">Digital University</span><span class="tag">Developed by Aurelia</span>
+              </div>
+            </div>
+            <div class="project-foot">
+              <span class="project-num">02</span>
+              <div class="project-arrow">
+                <i data-lucide="arrow-up-right"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Detailing Bros -->
 
   <a
   href="https://detailing-bros.vercel.app/"
@@ -415,7 +456,7 @@
       </div>
     </div>
     <div class="project-foot">
-      <span class="project-num">02</span>
+      <span class="project-num">03</span>
       <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
     </div>
   </div>
@@ -798,7 +839,7 @@ href="https://di-fireworks.vercel.app/"
 </a>
 <!-- 12 Meraj Limited -->
 
-<!-- <a  
+<a  
 href="https://meraj-limited.vercel.app/"
   target="_blank"
   rel="noopener noreferrer"
@@ -841,7 +882,7 @@ href="https://meraj-limited.vercel.app/"
       <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
     </div>
   </div>
-</a> -->
+</a>
 
 
 
@@ -872,7 +913,6 @@ href="https://meraj-limited.vercel.app/"
           <a href="index.html#services">Services</a>
           <a href="projects.html">Projects</a>
           <a href="index.html#about">About</a>
-          <a href="team.html">Team</a>
           <a href="index.html#contact">Contact</a>
         </div>
         <div class="footer-center-copy">
@@ -933,46 +973,6 @@ href="https://meraj-limited.vercel.app/"
 
         mobileNav.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', closeMobileNav);
-        });
-      })();
-    </script>
-
-    <!-- CURSOR TRACKING -->
-    <script>
-      (function(){
-        if (window.innerWidth <= 768) return;
-        const cursor = document.getElementById('cursor');
-        const follower = document.getElementById('cursorFollower');
-        if (!cursor || !follower) return;
-        
-        let mouseX = 0, mouseY = 0, followX = 0, followY = 0;
-        document.addEventListener('mousemove', (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          cursor.style.left = mouseX - 5 + 'px';
-          cursor.style.top = mouseY - 5 + 'px';
-        });
-        
-        function animateFollower() {
-          followX += (mouseX - followX) * 0.12;
-          followY += (mouseY - followY) * 0.12;
-          follower.style.left = followX - 18 + 'px';
-          follower.style.top = followY - 18 + 'px';
-          requestAnimationFrame(animateFollower);
-        }
-        animateFollower();
-        
-        document.querySelectorAll('a, button, .project-card').forEach(el => {
-          el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(2.5)';
-            follower.style.transform = 'scale(1.5)';
-            follower.style.borderColor = 'rgba(200,16,46,0.8)';
-          });
-          el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            follower.style.transform = 'scale(1)';
-            follower.style.borderColor = 'rgba(200,16,46,0.5)';
-          });
         });
       })();
     </script>

@@ -141,42 +141,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Lucide icons
   if (typeof lucide !== 'undefined') lucide.createIcons();
 
-  // ── CURSOR ──
-  const cursor = document.querySelector('.cursor');
-  const cursorFollower = document.querySelector('.cursor-follower');
-
-  if (cursor && cursorFollower) {
-    let mouseX = 0, mouseY = 0, followX = 0, followY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX; mouseY = e.clientY;
-      cursor.style.left = mouseX - 5 + 'px';
-      cursor.style.top  = mouseY - 5 + 'px';
-    });
-
-    function animateFollower() {
-      followX += (mouseX - followX) * 0.12;
-      followY += (mouseY - followY) * 0.12;
-      cursorFollower.style.left = followX - 18 + 'px';
-      cursorFollower.style.top  = followY - 18 + 'px';
-      requestAnimationFrame(animateFollower);
-    }
-    animateFollower();
-
-    document.querySelectorAll('a, button, .project-card, .service-card, .team-member-card, .owner-card').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(2.5)';
-        cursorFollower.style.transform = 'scale(1.5)';
-        cursorFollower.style.borderColor = 'rgba(200,16,46,0.8)';
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursorFollower.style.transform = 'scale(1)';
-        cursorFollower.style.borderColor = 'rgba(200,16,46,0.5)';
-      });
-    });
-  }
-
   // ── NAVBAR SCROLL ──
   const navbar = document.getElementById('navbar');
   if (navbar) {
