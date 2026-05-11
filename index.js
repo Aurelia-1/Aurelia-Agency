@@ -119,11 +119,7 @@ document.body.classList.add('theme-light');
 document.documentElement.style.background = '#f4f4f2';
 localStorage.setItem('aurelia-theme', 'light');
 
-// ── NAVBAR SCROLL ──
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
+// Navbar scroll and mobile nav handled by mobile-nav.js
 
 // revealObserver has been moved to mobile-nav.js for global consistency
 
