@@ -136,17 +136,21 @@ footer .footer-left-links a {
   margin: 0 auto 50px;
 }
 
-/* ── Glassy stat pill (small & compact) ── */
+/* ── Glassy stat pill ── */
 .hero-stats {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 0;
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 100px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  max-width: fit-content;
 }
 
 .stat-badge {
@@ -782,9 +786,91 @@ footer .footer-left-links a {
 }
 
 @media (max-width: 768px) {
-  .page-hero { padding: 130px 5% 60px; }
-  .hero-desc br { display: none; }
-  .projects-section { padding: 50px 4% 40px; gap: 36px; }
+  .page-hero {
+    padding: 130px 5% 60px;
+  }
+
+  .hero-desc br {
+    display: none;
+  }
+
+  .projects-section {
+    padding: 50px 4% 40px;
+    gap: 36px;
+  }
+
+  /* Stats to chips on tablet/mobile */
+  .hero-stats {
+    background: transparent !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .stat-badge {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 1) !important;
+    padding: 16px 12px !important;
+    border-radius: 12px !important;
+    flex: 1 1 140px !important;
+    max-width: calc(50% - 6px) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    min-height: 70px !important;
+  }
+
+  /* The 3rd badge (nth-child 5 due to dividers) centers and fills width */
+  .stat-badge:nth-child(5) {
+    flex: 1 1 100% !important;
+    max-width: 220px !important;
+  }
+
+  .stat-divider {
+    display: none !important;
+  }
+
+  .stat-num {
+    font-size: 20px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .stat-label {
+    font-size: 8.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Fix card content on mobile */
+  .featured-img-side {
+    min-height: 220px !important;
+  }
+
+  .browser-url {
+    display: none !important;
+  }
+
+  .featured-info {
+    padding: 24px 20px 28px !important;
+  }
+
+  .feat-title {
+    font-size: 1.65rem !important;
+  }
+
+  .feat-desc {
+    font-size: 13px !important;
+  }
 }
 
 @media (max-width: 480px) {
