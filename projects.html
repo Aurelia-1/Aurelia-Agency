@@ -1,1016 +1,324 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ==================== PRIMARY META ==================== -->
-    <title>Our Projects — Aurelia Agency | Premium Web Design Portfolio</title>
-    <meta
-      name="title"
-      content="Our Projects — Aurelia Agency | Premium Web Design Portfolio"
-    />
-    <meta
-      name="description"
-      content="Explore Aurelia Agency's portfolio of successful projects including Shopify stores, SaaS platforms, corporate websites, and e-commerce solutions built for clients in Pakistan and worldwide."
-    />
-    <meta
-      name="keywords"
-      content="web design portfolio, digital agency projects, Shopify development Pakistan, SaaS design, corporate websites Karachi, e-commerce design, web agency portfolio"
-    />
-    <meta
-      name="robots"
-      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    />
-    <meta name="language" content="English" />
-    <meta name="author" content="Aurelia Agency" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Projects | Aurelia Agency</title>
+  <meta name="description"
+    content="Explore our portfolio of premium web development, e-commerce stores, and digital marketing campaigns." />
 
-    <!-- ==================== GEO / LOCAL SEO ==================== -->
-    <meta name="geo.region" content="PK-SD" />
-    <meta name="geo.placename" content="Karachi" />
-    <meta name="geo.position" content="24.8607;67.0011" />
-    <meta name="ICBM" content="24.8607, 67.0011" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-    <!-- ==================== CANONICAL ==================== -->
-    <link rel="canonical" href="https://www.aureliaagency.site/projects.html" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="projects.css" />
+  <link rel="stylesheet" href="theme-overhaul.css" />
+  <link rel="stylesheet" href="fixes.css" />
+  <link rel="stylesheet" href="mobile-nav-fix.css" />
+  <link rel="stylesheet" href="responsive-enhancements.css" />
+  <link rel="stylesheet" href="readability-enhancements.css" />
+  <link rel="stylesheet" href="pricing-theme.css" />
 
-    <!-- ==================== OPEN GRAPH ==================== -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://www.aureliaagency.site/projects.html"
-    />
-    <meta
-      property="og:title"
-      content="Our Projects — Aurelia Agency | Premium Web Design Portfolio"
-    />
-    <meta
-      property="og:description"
-      content="Explore Aurelia Agency's portfolio of successful projects including Shopify stores, SaaS platforms, corporate websites, and e-commerce solutions."
-    />
-    <meta
-      property="og:image"
-      content="https://www.aureliaagency.site/images/projects-og.jpg"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Aurelia Agency Project Portfolio" />
-    <meta property="og:site_name" content="Aurelia Agency" />
-    <meta property="og:locale" content="en_US" />
+  <script>
+    (function () {
+      document.documentElement.style.background = "#f4f4f2";
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.add("theme-light");
+      });
+      localStorage.setItem('aurelia-theme', 'light');
+    })();
+  </script>
+</head>
 
-    <!-- ==================== TWITTER CARD ==================== -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:url"
-      content="https://www.aureliaagency.site/projects.html"
-    />
-    <meta
-      name="twitter:title"
-      content="Our Projects — Aurelia Agency | Premium Web Design Portfolio"
-    />
-    <meta
-      name="twitter:description"
-      content="Explore Aurelia Agency's portfolio of successful projects including Shopify stores, SaaS platforms, corporate websites, and e-commerce solutions."
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.aureliaagency.site/images/projects-twitter.jpg"
-    />
-    <meta name="twitter:image:alt" content="Aurelia Agency Project Portfolio" />
-    <meta name="twitter:creator" content="@aureliaagency" />
-    <meta name="twitter:site" content="@aureliaagency" />
+<body class="theme-light">
 
-    <!-- ==================== STRUCTURED DATA — CollectionPage ==================== -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Aurelia Agency Projects Portfolio",
-        "description": "Portfolio showcasing successful web design, Shopify, e-commerce, and SaaS projects by Aurelia Agency — a premium digital agency in Karachi, Pakistan.",
-        "url": "https://www.aureliaagency.site/projects.html",
-        "inLanguage": "en",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Aurelia Agency",
-          "url": "https://www.aureliaagency.site",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.aureliaagency.site/images/logo.png"
-          }
-        },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.aureliaagency.site/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Projects",
-              "item": "https://www.aureliaagency.site/projects.html"
-            }
-          ]
-        }
-      }
-    </script>
-
-    <!-- ==================== FONTS & SCRIPTS ==================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-
-    <!-- ==================== STYLESHEETS ==================== -->
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="projects.css" />
-    <link rel="stylesheet" href="theme-overhaul.css" />
-    <link rel="stylesheet" href="fixes.css" />
-    <link rel="stylesheet" href="mobile-nav-fix.css" />
-    <link rel="stylesheet" href="responsive-enhancements.css" />
-    <link rel="stylesheet" href="readability-enhancements.css" />
-    <link rel="stylesheet" href="pricing-theme.css" />
-
-    <!-- ==================== THEME FLASH PREVENTION — FORCE LIGHT THEME ==================== -->
-    <script>
-      (function () {
-        document.documentElement.style.background = "#f4f4f2";
-        document.addEventListener("DOMContentLoaded", function () {
-          document.body.classList.add("theme-light");
-        });
-        localStorage.setItem('aurelia-theme', 'light');
-      })();
-    </script>
-  </head>
-  <body>
-    <!-- NAV -->
-    <nav id="navbar">
-      <div class="logo">
-        <div class="logo-bar"></div>
-        <div class="logo-text">
-          <span class="brand">AURELIA</span><span class="sub">Agency</span>
-        </div>
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav id="navbar">
+    <div class="logo">
+      <div class="logo-bar"></div>
+      <div class="logo-text">
+        <span class="brand">AURELIA</span>
+        <span class="sub">Agency</span>
       </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#pricing">Packages</a></li>
+      <li><a href="projects.html" class="nav-active">Our Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li>
+        <a href="index.html#contact" class="btn-contact">
+          <span>Contact Us</span>
+          <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-      <!-- Desktop nav -->
-      <ul class="nav-links">
+  <!-- ==================== MOBILE NAV DRAWER ==================== -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-drawer">
+      <ul class="mobile-nav-links">
         <li><a href="index.html#hero">Home</a></li>
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#pricing">Packages</a></li>
         <li><a href="projects.html" class="nav-active">Our Projects</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#reviews">Reviews</a></li>
-        <li>
-          <a href="index.html#contact" class="btn-contact">
-            <span>Contact Us</span>
-            <i data-lucide="arrow-right" style="width: 14px; height: 14px"></i>
-          </a>
-        </li>
       </ul>
+      <div class="mobile-nav-cta">
+        <a href="index.html#contact" class="btn-contact">
+          Contact Us <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+      <div class="mobile-nav-socials">
+        <a href="https://www.instagram.com/_aureliaa_._" target="_blank"><i data-lucide="instagram"></i></a>
+        <a href="https://linkedin.com/in/aurelia-agency-a1263a400" target="_blank"><i data-lucide="linkedin"></i></a>
+      </div>
+      <p class="mobile-nav-footer">© 2026 Aurelia Agency</p>
+    </div>
+  </div>
 
-      <!-- Hamburger -->
-
-
-      <button
-        class="hamburger"
-        id="hamburger"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-
-    <!-- MOBILE NAV DRAWER -->
-    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-      <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-      <div class="mobile-nav-drawer">
-        <ul class="mobile-nav-links">
-          <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#pricing">Packages</a></li>
-          <li><a href="projects.html" class="nav-active">Our Projects</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#reviews">Reviews</a></li>
-        </ul>
-        <div class="mobile-nav-cta">
-          <a href="index.html#contact" class="btn-contact">
-            <span>Contact Us</span>
-            <i data-lucide="arrow-right" style="width: 14px; height: 14px"></i>
-          </a>
-        </div>
-        <!-- Inline SVGs so icons always show regardless of Lucide timing -->
-        <div class="mobile-nav-socials">
-          <a
-            href="https://www.instagram.com/_aureliaa_._"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-          </a>
-          <a
-            href="https://linkedin.com/in/aurelia-agency-a1263a400"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-              />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </a>
-          <a href="tel:+923193921895">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
-              />
-            </svg>
-          </a>
-        </div>
-        <p class="mobile-nav-footer">© 2026 Aurelia Agency</p>
+  <!-- ==================== PAGE HERO ==================== -->
+  <section class="page-hero">
+    <div class="hero-eyebrow reveal">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Selected Work</span>
+      <span class="eyebrow-line"></span>
+    </div>
+    <h1 class="hero-h1 reveal">
+      Projects That<br /><em>Speak</em> for Themselves
+    </h1>
+    <p class="hero-desc reveal">
+      A curated collection of high-performance commerce engines,<br />
+      modern digital portals, and cinematic brand identities.
+    </p>
+    <div class="hero-stats reveal">
+      <div class="stat-badge">
+        <span class="stat-num">20+</span>
+        <span class="stat-label">Projects Shipped</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-badge">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Client Satisfaction</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-badge">
+        <span class="stat-num">3×</span>
+        <span class="stat-label">Avg Traffic Increase</span>
       </div>
     </div>
+  </section>
 
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-      <div class="hero-bg-text">WORK</div>
-      <div class="hero-tag reveal">Our Portfolio</div>
-      <h1 class="hero-h1 reveal reveal-delay-1">
-        Projects That <em>Speak</em><br />for Themselves
-      </h1>
-      <p class="hero-desc reveal reveal-delay-2">
-        From Shopify stores to cinematic brand films — every project we deliver
-        is built to perform and built to last.
-      </p>
-      <div class="hero-stats reveal reveal-delay-3">
-        <div class="hero-stat">
-          <span class="hero-stat-num">100+</span
-          ><span class="hero-stat-label">Projects</span>
-        </div>
-        <div class="hero-stat-line"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">50+</span
-          ><span class="hero-stat-label">Clients</span>
-        </div>
-        <div class="hero-stat-line"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">98%</span
-          ><span class="hero-stat-label">Satisfaction</span>
-        </div>
-      </div>
-    </section>
+  <!-- ==================== FILTER BAR ==================== -->
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="all">All Work</button>
+    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+    <button class="filter-btn" data-filter="web">Web Design</button>
+    <button class="filter-btn" data-filter="marketing">Marketing</button>
+  </div>
 
-    <!-- FILTER -->
-    <div class="filter-bar">
-      <span class="filter-label">Filter by</span>
-      <button class="filter-btn active" data-filter="all">All Work</button>
-      <button class="filter-btn" data-filter="web">Web Design</button>
-      <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-      <button class="filter-btn" data-filter="saas">SaaS / Apps</button>
-      <button class="filter-btn" data-filter="corporate">Corporate</button>
+  <!-- ==================== PROJECTS SHOWCASE ==================== -->
+  <section class="projects-section">
+
+    <!-- ── FEATURED HERO PROJECT: Laptop Wala ── -->
+    <div class="featured-wrap reveal" data-category="ecommerce">
+      <a href="https://laptop-wale.vercel.app/" target="_blank" rel="noopener noreferrer" class="featured-card">
+        <div class="featured-img-side">
+          <div class="browser-bar">
+            <div class="browser-dots-row">
+              <span class="bdot red"></span>
+              <span class="bdot yellow"></span>
+              <span class="bdot green"></span>
+            </div>
+            <div class="browser-url">laptop-wale.vercel.app</div>
+          </div>
+          <div class="featured-img-wrap">
+            <img src="./images/laptop Web.png" alt="Laptop Wala" />
+            <div class="featured-img-overlay"></div>
+          </div>
+          <div class="feat-accent-card">
+            <i data-lucide="trending-up"></i>
+            <div>
+              <strong>+280%</strong>
+              <span>Organic Traffic</span>
+            </div>
+          </div>
+        </div>
+        <div class="featured-info">
+          <div class="feat-index">01</div>
+          <div class="feat-category-tag">Technical Commerce</div>
+          <h2 class="feat-title">Laptop Wala<br /><em>Engine</em></h2>
+          <p class="feat-desc">
+            A high-performance e-commerce ecosystem built for scale — featuring optimised core web vitals, a
+            neon-cyberpunk visual identity, and a seamless checkout experience that converts.
+          </p>
+          <div class="feat-tags">
+            <span>Shopify</span>
+            <span>Next.js</span>
+            <span>UX Design</span>
+            <span>SEO</span>
+          </div>
+          <div class="feat-cta">
+            <span class="feat-cta-text">Explore Project</span>
+            <div class="feat-arrow-circle">
+              <i data-lucide="arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
 
-    <!-- PROJECTS -->
-    <section class="projects-section">
-      <div class="projects-grid reveal" id="projectsGrid">
-        
-        <!--  Laptop Wala -->
-        <a
-          href="https://laptop-wale.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-card wide reveal"
-          data-category="ecommerce"
-        >
-          <div class="project-media reveal reveal-delay-2">
-            <div class="browser-bar">
-              <div class="browser-dots">
-                <span class="dot red"></span><span class="dot yellow"></span
-                ><span class="dot green"></span>
-              </div>
-              <div class="browser-url">laptopwale.com</div>
-            </div>
-            <div class="project-img-wrap">
-              <img
-                src="./images/laptop Web.png"
-                alt="Laptop Wale - Modern Laptop & Tech Store Website"
-              />
-              <div class="img-overlay">
-                <span>View Project <i data-lucide="arrow-up-right"></i></span>
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div>
-              <div class="project-category"> TECH STORE & DIGITAL SHOP</div>
-              <h3 class="project-title">Laptop Wale – Modern Laptop & Tech Store Website</h3>
-              <p class="project-desc">
-                A clean and responsive eCommerce-style laptop store website designed for showcasing laptops, accessories, and tech products with a modern UI. Built with a professional layout, smooth user experience, mobile-friendly design, and optimized performance to help tech businesses establish a strong online presence.
-              </p>
-              <div class="project-tags">
-                <span class="tag">Responsive</span
-                ><span class="tag">eCommerce</span> <span class="tag">SEO Optimized</span>
-                <span class="tag">Tech Store</span><span class="tag">Developed by Aurelia</span>
-              </div>
-            </div>
-            <div class="project-foot">
-              <span class="project-num">01</span>
-              <div class="project-arrow">
-                <i data-lucide="arrow-up-right"></i>
-              </div>
-            </div>
-          </div>
-        </a>
+    <!-- ── BENTO GRID: remaining 3 projects ── -->
+    <div class="bento-row">
 
-        <!--  Trade Empire -->
-        <a
-          href="https://tradeempire.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-card wide reveal"
-          data-category="ecommerce"
-        >
-          <div class="project-media reveal reveal-delay-2">
-            <div class="browser-bar">
-              <div class="browser-dots">
-                <span class="dot red"></span><span class="dot yellow"></span
-                ><span class="dot green"></span>
-              </div>
-              <div class="browser-url">tradeempire.com</div>
-            </div>
-            <div class="project-img-wrap">
-              <img
-                src="./images/Trade empire.png"
-                alt="Laptop Wale - Modern Laptop & Tech Store Website"
-              />
-              <div class="img-overlay">
-                <span>View Project <i data-lucide="arrow-up-right"></i></span>
-              </div>
-            </div>
+      <!-- Trade Empire — tall left card -->
+      <a href="https://tradeempire.vercel.app/" target="_blank" rel="noopener noreferrer" class="bento-card tall reveal"
+        data-category="ecommerce">
+        <div class="bento-img-wrap">
+          <img src="./images/Trade empire.png" alt="Trade Empire" />
+          <div class="bento-overlay"></div>
+        </div>
+        <div class="bento-content">
+          <span class="bento-num">02</span>
+          <div class="bento-cat">Financial Infrastructure</div>
+          <h3 class="bento-title">Trade Empire</h3>
+          <p class="bento-desc">A modern digital university platform for financial education, built with a premium
+            interface and secure data structures.</p>
+          <div class="bento-tags">
+            <span>FinTech</span><span>LMS</span>
           </div>
-          <div class="project-info">
-            <div>
-              <div class="project-category"> FINANCE & DIGITAL UNIVERSITY</div>
-              <h3 class="project-title">Trade Empire – Finance & Digital University Platform</h3>
-              <p class="project-desc">
-                Trade Empire is a modern trading and finance website designed for trading mentors, investment communities, and financial education brands. Built with a premium dark UI, responsive layout, and professional business-focused design, the website helps establish authority, build trust, and attract potential clients through a clean and engaging user experience.
+          <div class="bento-link">View Case Study <i data-lucide="arrow-right"></i></div>
+        </div>
+      </a>
 
-              </p>
-              <div class="project-tags">
-                <span class="tag">Responsive</span
-                ><span class="tag">Finance</span> <span class="tag">SEO Optimized</span>
-                <span class="tag">Digital University</span><span class="tag">Developed by Aurelia</span>
-              </div>
-            </div>
-            <div class="project-foot">
-              <span class="project-num">02</span>
-              <div class="project-arrow">
-                <i data-lucide="arrow-up-right"></i>
-              </div>
-            </div>
-          </div>
-        </a>
+      <!-- Right column -->
+      <div class="bento-col">
+
         <!-- Detailing Bros -->
-
-  <a
-  href="https://detailing-bros.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="automotive"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">detailing-bros.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/Detailing Bros.png"
-        alt="Detailing Bros - Premium Car Detailing Service Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">AUTOMOTIVE & CAR CARE</div>
-      <h3 class="project-title">Detailing Bros – Premium Car Detailing Service Website</h3>
-      <p class="project-desc">
-        A bold and high-impact service website built for a professional car detailing business. Features a sleek dark aesthetic, service package showcases, before-and-after galleries, and easy booking prompts — crafted to convert visitors into loyal customers for auto detailing brands.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Service Website</span><span class="tag">Automotive</span>
-        <span class="tag">Dark UI</span><span class="tag">Conversion Focused</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">03</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-
-<!-- 04 Medi Care Elite Class -->
-
-<a  
-href="https://medi-care-elite-class.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="healthcare"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">medi-care-elite-class.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/Hospital Web.png"
-        alt="Medi Care Elite Class - Premium Healthcare & Clinic Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">HEALTHCARE & MEDICAL SERVICES</div>
-      <h3 class="project-title">Medi Care Elite Class – Premium Healthcare & Clinic Website</h3>
-      <p class="project-desc">
-        A clean, trustworthy, and professional healthcare website designed for elite medical clinics and health service providers. Features appointment-ready layouts, doctor profiles, service listings, and a calm, confidence-inspiring design system that puts patient trust at the forefront.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Healthcare</span><span class="tag">Medical</span>
-        <span class="tag">Clean UI</span><span class="tag">Clinic Website</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">04</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-
-<!-- 05 Rental Car Demo -->
-
-<a  
-href="https://rental-car-demo.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="automotive"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">rental-car-demo.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/Rental Car Website.png"
-        alt="Rental Car Demo - Car Rental & Fleet Booking Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">CAR RENTAL & FLEET MANAGEMENT</div>
-      <h3 class="project-title">Rental Car Demo – Car Rental & Fleet Booking Website</h3>
-      <p class="project-desc">
-        A dynamic and user-friendly car rental website featuring vehicle showcase grids, rental package details, and a smooth booking-oriented interface. Designed to help car rental businesses present their fleet with impact and drive customer inquiries through a seamless online experience.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Car Rental</span><span class="tag">Fleet Showcase</span>
-        <span class="tag">Booking UI</span><span class="tag">Automotive</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">05</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-
-<!-- 06 Iron Forge Bars -->
-
-<a
-href="https://iron-forge-bars.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="fitness"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">iron-forge-bars.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/Gym web.png"
-        alt="Iron Forge Bars - Gym & Fitness Center Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">GYM & FITNESS CENTER</div>
-      <h3 class="project-title">Iron Forge Bars – Gym & Fitness Center Website</h3>
-      <p class="project-desc">
-        A raw, energetic, and high-performance website built for a serious gym brand. Features membership plans, training programs, facility highlights, and a gritty-yet-premium visual design that motivates visitors and positions the gym as the ultimate destination for strength training.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Fitness</span><span class="tag">Gym Website</span>
-        <span class="tag">Bold UI</span><span class="tag">Membership</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">06</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-
-<!-- 07 One Call Solution -->
-
-<a
-href="https://onecallsolution-t.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="services"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">onecallsolution-t.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/one call.png"
-        alt="One Call Solution - Multi-Service Business Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">MULTI-SERVICE & SOLUTIONS PROVIDER</div>
-      <h3 class="project-title">One Call Solution – Multi-Service Business Website</h3>
-      <p class="project-desc">
-        A versatile and professional website designed for an all-in-one service solutions company. Showcases a wide range of business offerings with clear service breakdowns, a strong call-to-action structure, and a trustworthy design that encourages clients to reach out with just one call.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Multi-Service</span><span class="tag">Lead Generation</span>
-        <span class="tag">CTA Focused</span><span class="tag">Business</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">07</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-
-<!-- 08 Edu Peak Prime -->
-
-<a  
-href="https://edu-peak-prime.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="education"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">edu-peak-prime.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/Coaching Web.png"
-        alt="Edu Peak Prime - Online Learning & Education Platform Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">EDUCATION & ONLINE LEARNING</div>
-      <h3 class="project-title">Edu Peak Prime – Online Learning & Education Platform Website</h3>
-      <p class="project-desc">
-        A modern and inspiring education website built for an online learning platform. Features course listings, instructor highlights, student testimonials, and an intuitive layout that guides learners from curiosity to enrollment — helping educational brands reach their peak potential online.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Education</span><span class="tag">E-Learning</span>
-        <span class="tag">Course Platform</span><span class="tag">Modern UI</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">08</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-<!-- 09 Codex Com -->
-
-<a  
-href="https://codex-com.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="tech"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">codex-com.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/codex.png"
-        alt="Codex Com - Tech Agency & Software Company Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">TECH AGENCY & SOFTWARE SOLUTIONS</div>
-      <h3 class="project-title">Codex Com – Tech Agency & Software Company Website</h3>
-      <p class="project-desc">
-        A cutting-edge website crafted for a software and technology agency. Built with a futuristic aesthetic, structured service portfolios, and a sleek developer-inspired design language — perfectly communicating technical expertise and innovation to enterprise clients and startups alike.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Tech Agency</span><span class="tag">Software</span>
-        <span class="tag">Futuristic UI</span><span class="tag">Portfolio</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">09</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-
-<!-- 10 IC Tech Liart -->
-
-<a  
-href="https://ic-tech-liart.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="tech"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">ic-tech-liart.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/ic tech project.jpeg"
-        alt="IC Tech Liart - IT Solutions & Technology Services Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">IT SOLUTIONS & TECHNOLOGY SERVICES</div>
-      <h3 class="project-title">IC Tech Liart – IT Solutions & Technology Services Website</h3>
-      <p class="project-desc">
-        A sharp and professional IT services website built for a modern technology solutions provider. Showcases core tech offerings, infrastructure support, and digital transformation services through a structured, clean layout — designed to build client confidence and drive business inquiries in the competitive tech space.
-      </p>
-      <div class="project-tags">
-        <span class="tag">IT Solutions</span><span class="tag">Technology</span>
-        <span class="tag">Professional UI</span><span class="tag">Digital Services</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">12</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-
-
-<!-- 11 DI Fireworks -->
-
-<a  
-href="https://di-fireworks.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="events"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">di-fireworks.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/Di Web.png"
-        alt="DI Fireworks - Fireworks & Event Pyrotechnics Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">EVENTS & PYROTECHNICS</div>
-      <h3 class="project-title">DI Fireworks – Fireworks & Event Pyrotechnics Website</h3>
-      <p class="project-desc">
-        A vibrant and electrifying website designed for a professional fireworks and pyrotechnics company. Features an eye-catching visual experience, event package showcases, safety information, and a celebratory design atmosphere that captures the magic and excitement of every show.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Events</span><span class="tag">Fireworks</span>
-        <span class="tag">Vibrant UI</span><span class="tag">Pyrotechnics</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">11</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-<!-- 12 Meraj Limited -->
-
-<a  
-href="https://meraj-limited.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="project-card wide reveal"
-  data-category="business"
->
-  <div class="project-media reveal reveal-delay-2">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot red"></span><span class="dot yellow"></span
-        ><span class="dot green"></span>
-      </div>
-      <div class="browser-url">meraj-limited.vercel.app</div>
-    </div>
-    <div class="project-img-wrap">
-      <img
-        src="./images/merajlimited.png"
-        alt="Meraj Limited - Premium Corporate Business Website"
-      />
-      <div class="img-overlay">
-        <span>View Project <i data-lucide="arrow-up-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <div>
-      <div class="project-category">CORPORATE & ENTERPRISE BRAND</div>
-      <h3 class="project-title">Meraj Limited – Premium Corporate Business Website</h3>
-      <p class="project-desc">
-        An elegant and refined corporate website built for Meraj Limited, reflecting a premium brand identity. Designed with strong typography, authoritative section structure, and a polished visual hierarchy that instills credibility and positions the company as a leader in its industry.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Corporate</span><span class="tag">Enterprise</span>
-        <span class="tag">Brand Identity</span><span class="tag">Premium UI</span>
-        <span class="tag">Developed by Aurelia</span>
-      </div>
-    </div>
-    <div class="project-foot">
-      <span class="project-num">10</span>
-      <div class="project-arrow"><i data-lucide="arrow-up-right"></i></div>
-    </div>
-  </div>
-</a>
-
-
-
-        <!-- COMING SOON -->
-        <div class="project-card coming-soon reveal reveal-delay-2">
-          <div class="coming-icon">✦</div>
-          <div class="coming-title">More Coming Soon</div>
-          <div class="coming-sub">New projects launching Q2 2026</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <div class="cta-strip reveal">
-      <div class="cta-left">
-        <h2>Ready to Build Something <em>Extraordinary?</em></h2>
-        <p>
-          Let's turn your vision into a project that belongs in this portfolio.
-        </p>
-      </div>
-      <a href="index.html#contact" class="btn-primary">Start a Project →</a>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-one-line">
-        <div class="footer-left-links">
-          <a href="index.html#services">Services</a>
-          <a href="projects.html">Projects</a>
-          <a href="index.html#about">About</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
-        <div class="footer-center-copy">
-          © 2026 Aurelia Agency // ALL RIGHTS RESERVED
-        </div>
-        <div class="logo">
-          <div class="logo-bar" style="background: var(--red);"></div>
-          <div class="logo-text">
-            <span class="brand" style="color: #111;">AURELIA</span>
-            <span class="sub" style="color: var(--red);">Agency</span>
+        <a href="https://detailing-bros.vercel.app/" target="_blank" rel="noopener noreferrer" class="bento-card reveal"
+          data-category="web">
+          <div class="bento-img-wrap">
+            <img src="./images/Detailing Bros.png" alt="Detailing Bros" />
+            <div class="bento-overlay"></div>
           </div>
+          <div class="bento-content">
+            <span class="bento-num">03</span>
+            <div class="bento-cat">Automotive Services</div>
+            <h3 class="bento-title">Detailing Bros</h3>
+            <p class="bento-desc">Cinematic service portal designed to convert automotive enthusiasts through striking
+              visuals and clear CTAs.</p>
+            <div class="bento-tags">
+              <span>SEO</span><span>Branding</span>
+            </div>
+            <div class="bento-link">See More <i data-lucide="arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Medicare -->
+        <a href="https://medi-care-elite-class.vercel.app/" target="_blank" rel="noopener noreferrer"
+          class="bento-card reveal" data-category="web">
+          <div class="bento-img-wrap">
+            <img src="./images/Hospital Web.png" alt="Medicare" />
+            <div class="bento-overlay"></div>
+          </div>
+          <div class="bento-content">
+            <span class="bento-num">04</span>
+            <div class="bento-cat">HealthCare Digital</div>
+            <h3 class="bento-title">Medicare Elite</h3>
+            <p class="bento-desc">A confidence-inspiring portal for premium healthcare clinics, optimized for patient
+              trust and seamless booking.</p>
+            <div class="bento-tags">
+              <span>Healthcare</span><span>Clean UI</span>
+            </div>
+            <div class="bento-link">Open Portal <i data-lucide="arrow-right"></i></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== MARQUEE STRIP ==================== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Web Development</span><span class="dot-sep">✦</span>
+      <span>E-Commerce</span><span class="dot-sep">✦</span>
+      <span>Brand Identity</span><span class="dot-sep">✦</span>
+      <span>Digital Marketing</span><span class="dot-sep">✦</span>
+      <span>SEO Optimisation</span><span class="dot-sep">✦</span>
+      <span>UI/UX Design</span><span class="dot-sep">✦</span>
+      <span>Web Development</span><span class="dot-sep">✦</span>
+      <span>E-Commerce</span><span class="dot-sep">✦</span>
+      <span>Brand Identity</span><span class="dot-sep">✦</span>
+      <span>Digital Marketing</span><span class="dot-sep">✦</span>
+      <span>SEO Optimisation</span><span class="dot-sep">✦</span>
+      <span>UI/UX Design</span><span class="dot-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ==================== CALL TO ACTION ==================== -->
+  <section class="projects-cta">
+    <div class="cta-inner reveal">
+      <div class="cta-label">Ready to Build?</div>
+      <h2 class="cta-heading">Your next project<br /><em>starts here.</em></h2>
+      <p class="cta-sub">We turn ideas into high-performance digital experiences.<br />Let's build something
+        unforgettable together.</p>
+      <a href="index.html#contact" class="cta-btn">
+        Initialize Project
+        <i data-lucide="arrow-right"></i>
+      </a>
+    </div>
+    <div class="cta-deco-num">05</div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="footer-one-line">
+      <div class="footer-left-links">
+        <a href="index.html#services">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-center-copy">
+        © 2026 Aurelia Agency // ALL RIGHTS RESERVED
+      </div>
+      <div class="logo">
+        <div class="logo-bar" style="background: var(--red);"></div>
+        <div class="logo-text">
+          <span class="brand" style="color: #111;">AURELIA</span>
+          <span class="sub" style="color: var(--red);">Agency</span>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="projects.js"></script>
-    
-    <!-- FORCE LIGHT THEME -->
-    <script>
-      (function(){
-        document.body.classList.add('theme-light');
-        localStorage.setItem('aurelia-theme', 'light');
-        if(typeof lucide !== 'undefined') lucide.createIcons();
-      })();
-    </script>
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="mobile-nav.js"></script>
+  <script src="projects.js"></script>
 
-    <!-- HAMBURGER / MOBILE NAV -->
-    <script>
-      (function(){
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  <!-- WhatsApp Floating Button — styled via .whatsapp-btn in CSS -->
+  <a class="whatsapp-btn" href="https://wa.me/923193921895" target="_blank" rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
 
-        if (!hamburger || !mobileNav || !mobileNavOverlay) return;
-
-        function openMobileNav() {
-          hamburger.classList.add('open');
-          mobileNav.classList.add('open');
-          mobileNav.setAttribute('aria-hidden', 'false');
-          hamburger.setAttribute('aria-expanded', 'true');
-          document.body.style.overflow = 'hidden';
-          if (typeof lucide !== 'undefined') lucide.createIcons();
-        }
-
-        function closeMobileNav() {
-          hamburger.classList.remove('open');
-          mobileNav.classList.remove('open');
-          mobileNav.setAttribute('aria-hidden', 'true');
-          hamburger.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        }
-
-        hamburger.addEventListener('click', () => {
-          mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
-        });
-
-        mobileNavOverlay.addEventListener('click', closeMobileNav);
-
-        mobileNav.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', closeMobileNav);
-        });
-      })();
-    </script>
-
-    <!-- REVEAL OBSERVER -->
-    <script>
-      (function(){
-        const reveals = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-          });
-        }, { threshold: 0.12 });
-        reveals.forEach(el => revealObserver.observe(el));
-      })();
-    </script>
-    
-    <!-- FLOATING BUTTONS: WhatsApp + Scroll To Top -->
-  <div class="floating-btns">
-    <a class="scroll-top-btn" id="scrollTopBtn" href="#" aria-label="Scroll to top" title="Back to top">
-      <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
-    </a>
-    <a class="whatsapp-btn" href="https://wa.me/923253548900" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-  </div>
-  <script>
-    (function(){
-      var btn = document.getElementById("scrollTopBtn");
-      if(!btn) return;
-      window.addEventListener("scroll", function(){
-        btn.classList.toggle("visible", window.scrollY > 300);
-      });
-      btn.addEventListener("click", function(e){
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    })();
-  </script>
 </body>
+
 </html>

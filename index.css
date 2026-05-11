@@ -2493,11 +2493,142 @@ footer {
 }
 
 .pricing-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px) scale(1.02);
   box-shadow: 
-    0 30px 60px rgba(0,0,0,0.4),
-    0 0 40px rgba(200,16,46,0.08);
-  border-color: rgba(200,16,46,0.2);
+    0 40px 80px rgba(0,0,0,0.6),
+    0 0 50px rgba(200,16,46,0.15);
+  border-color: rgba(200,16,46,0.4);
+}
+
+/* ── Modern UI Enhancements ── */
+.pricing-card-inner {
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing-tier {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.tier-name {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.pricing-price-block {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: baseline;
+}
+
+.price-currency {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--red);
+  margin-right: 4px;
+}
+
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+}
+
+.price-separator {
+  font-size: 24px;
+  color: rgba(255,255,255,0.2);
+  margin: 0 8px;
+}
+
+.pricing-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+  margin-bottom: 35px;
+  min-height: 45px;
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 40px;
+  flex: 1;
+}
+
+.pricing-features li {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.feature-check {
+  color: var(--red);
+  margin-top: 2px;
+}
+
+.pricing-btn {
+  width: 100%;
+  padding: 18px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricing-btn-primary {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(200, 16, 46, 0.3);
+}
+
+.pricing-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(200, 16, 46, 0.5);
+}
+
+.pricing-btn-outline {
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.pricing-btn-outline:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--red);
+}
+
+/* ── Featured Card Neon ── */
+.pricing-card--featured {
+  background: rgba(200, 16, 46, 0.05);
+  border-color: rgba(200, 16, 46, 0.3);
+}
+
+.pricing-card--featured::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
 }
 
 /* Card shine effect */
@@ -2957,9 +3088,9 @@ footer {
 @media (max-width: 1024px) {
   .pricing-grid {
     grid-template-columns: 1fr;
-    max-width: 480px;
+    max-width: 440px;
     margin: 0 auto;
-    gap: 32px;
+    gap: 24px;
   }
 
   .pricing-card--featured {
