@@ -74,9 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    // OPTIONAL: unobserve after reveal
+                    // revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12 });
+        }, { 
+            threshold: 0.05,
+            rootMargin: '0px 0px -20px 0px' 
+        });
         
         reveals.forEach(el => revealObserver.observe(el));
     }

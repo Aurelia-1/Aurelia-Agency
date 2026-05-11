@@ -990,19 +990,30 @@ footer .footer-left-links a {
   }
 
   .hero-stats {
-    border-radius: 12px;
+    border-radius: 20px;
+    padding: 15px 10px;
+    width: 100%;
+    justify-content: space-around;
   }
 
   .stat-badge {
-    padding: 0 8px;
+    padding: 0 4px;
+    flex: 1;
   }
 
   .stat-num {
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .stat-label {
+    font-size: 8px;
+    white-space: nowrap;
   }
 
   .stat-divider {
-    height: 18px;
+    height: 24px;
+    opacity: 0.5;
   }
 
   .featured-img-side {
