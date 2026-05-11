@@ -56,7 +56,6 @@ body {
   background: var(--bg) !important;
   color: var(--text-1);
   overflow-x: hidden;
-  cursor: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
