@@ -238,9 +238,7 @@ html, body {
     display: none !important;
   }
 
-  .hamburger {
-    display: flex !important;
-  }
+
 
   .theme-toggle {
     order: 2;
@@ -248,9 +246,7 @@ html, body {
     margin-right: 12px;
   }
 
-  .hamburger {
-    order: 3;
-  }
+
 }
 
 @media (max-width: 768px) {

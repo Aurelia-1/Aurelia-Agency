@@ -104,7 +104,7 @@ nav.scrolled {
 .mobile-nav-links a.nav-active,
 .mobile-nav-links a.active { color: var(--red) !important; }
 
-.hamburger span { background: var(--text-1) !important; }
+
 
 .mobile-nav-drawer {
   background: var(--bg2) !important;
@@ -503,5 +503,5 @@ body.theme-light .mobile-nav.open .mobile-nav-overlay {
   /* nav-links hidden, theme-toggle and hamburger are visible */
   .nav-links   { display: none !important; }
   .theme-toggle { order: 2; margin-left: auto; margin-right: 10px; }
-  .hamburger   { order: 3; margin-left: 0; }
+
 }

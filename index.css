@@ -277,7 +277,7 @@ body.theme-blue .theme-toggle .icon-sun  { display: block; }
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 body {
@@ -393,51 +393,7 @@ nav.scrolled {
   opacity: 0.9;
 }
 
-/* -- HAMBURGER -- */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  gap: 6px;
-  z-index: 200;
-  position: relative;
-}
 
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 1.5px;
-  background: var(--light);
-  transition: transform 0.35s ease, opacity 0.25s ease, width 0.3s ease;
-  transform-origin: center;
-}
-
-.hamburger span:nth-child(2) {
-  width: 16px;
-  align-self: flex-end;
-}
-
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7.5px) rotate(45deg);
-  width: 24px;
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7.5px) rotate(-45deg);
-  width: 24px;
-}
 
 /* -- MOBILE NAV DRAWER -- */
 .mobile-nav {
@@ -1352,10 +1308,7 @@ footer {
   }
 }
 
-/* -- HAMBURGER (Global fix) -- */
-body.theme-light .hamburger span {
-  background: #111 !important;
-}
+
 
 /* -- Prevent black background on footer in any theme for this version -- */
 footer {
@@ -1642,9 +1595,7 @@ footer {
     padding: 0 32px;
   }
 
-  .hamburger {
-    display: flex;
-  }
+
 
   .nav-links {
     display: none;

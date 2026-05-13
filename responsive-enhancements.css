@@ -322,10 +322,7 @@
     min-height: 44px !important; /* iOS touch target */
   }
 
-  .hamburger {
-    min-width: 44px !important;
-    min-height: 44px !important;
-  }
+
 
   /* Improve form accessibility */
   input:focus, select:focus, textarea:focus {
@@ -446,7 +443,7 @@
 
 /* ── PRINT STYLES ── */
 @media print {
-  nav, .floating-btns, .hamburger, .theme-toggle {
+  nav, .floating-btns, .theme-toggle {
     display: none !important;
   }
 

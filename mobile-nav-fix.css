@@ -161,9 +161,68 @@ body.theme-light .mobile-nav-links a {
    ══════════════════════════════════════════════════════════════ */
 
 .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  gap: 6px !important;
+  z-index: 9999 !important;
   position: relative !important;
-  z-index: 9100 !important;
-  /* mobile-nav se bhi upar — taaki close kar sake */
+  transition: all 0.3s ease !important;
+}
+
+.hamburger span {
+  display: block !important;
+  width: 28px !important;
+  height: 2px !important;
+  background: var(--text-1) !important;
+  border-radius: 4px !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  transform-origin: center !important;
+}
+
+.hamburger span:nth-child(2) {
+  width: 18px !important;
+}
+
+.hamburger span:nth-child(3) {
+  width: 24px !important;
+}
+
+.hamburger:hover span {
+  width: 28px !important;
+  background: var(--red) !important;
+}
+
+/* Open State (X) */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg) !important;
+  width: 28px !important;
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg) !important;
+  width: 28px !important;
+}
+
+/* Mobile Visibility - ensuring it shows up on all pages consistently */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex !important;
+    order: 3 !important;
+    margin-left: 0 !important;
+  }
 }
 
 /* Nav bhi upar raho jab menu open ho */
