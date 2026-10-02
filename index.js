@@ -119,20 +119,9 @@ document.body.classList.add('theme-light');
 document.documentElement.style.background = '#f4f4f2';
 localStorage.setItem('aurelia-theme', 'light');
 
-// ── NAVBAR SCROLL ──
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
+// Navbar scroll and mobile nav handled by mobile-nav.js
 
-// ── REVEAL OBSERVER ──
-const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('active');
-  });
-}, { threshold: 0.12 });
-reveals.forEach(el => revealObserver.observe(el));
+// revealObserver has been moved to mobile-nav.js for global consistency
 
 // ── COUNTER ANIMATION ──
 function animateCounter(el, target, duration = 2000) {
@@ -160,7 +149,7 @@ const countersObserver = new IntersectionObserver((entries) => {
       countersObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.1 });
 
 const statsEl = document.querySelector('.stats');
 const heroNumber = document.querySelector('.hero-number');
